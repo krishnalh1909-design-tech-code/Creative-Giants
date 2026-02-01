@@ -1,6 +1,14 @@
 @import "tailwindcss";
- 
 
+@font-face {
+  font-family: "Light";
+  src: url("./assets/Fonts//Switzer-Light.woff") format("woff2");
+}
+
+@font-face {
+  font-family: "Regular";
+  src: url("./assets/Fonts/Switzer-Regular.woff2") format("woff2");
+}
 
 /* .text-mask {
   background: url("./assets/Videos/CreativeBgVideo.mp4"); 
@@ -15,5 +23,10 @@
   mix-blend-mode: screen;
 } */
 
+/* .line-mask {
+  overflow: hidden;
+}
 
-
+.line-text {
+  display: inline-block;
+} */
