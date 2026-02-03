@@ -1,9 +1,37 @@
-import React from 'react'
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Title = () => {
+  const titleRef = useRef(null);
+  useEffect(() => {
+    gsap.from(
+      titleRef.current,
+      {
+        y: "-100%",
+        duration: 1
+      },
+    );
+
+    gsap.to(titleRef.current, {
+      yPercent: -70, 
+      ease: "none",
+      scrollTrigger: {
+        trigger: document.body, 
+        start: "top top",
+        end: "+=100%",
+        scrub: true,
+        markers: true,
+      },
+    });
+
+
+  }, []);
   return (
-    <div className='absolute top-0 left-0 h-[40vh] md:h-[70vh] w-full bg-[#ffffffb9]'>
-      <div className='w-full h-full px-3 md:px-8  py-5 flex items-end mix-blend-screen bg-[#FFFFFE]'>
+    <div ref={titleRef} className='absolute top-0 left-0 h-[40vh] mix-blend-screen backdrop-blur-3xl md:h-[70vh] w-full bg-[#ffffffb9]'>
+      <div className='w-full h-full px-3 md:px-8  py-5 flex items-end  bg-[#FFFFFE]'>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="100%"

@@ -12,7 +12,7 @@ const DescPage = () => {
   });
 
   return (
-    <div className="min-h-[110vh] flex flex-col gap-10 w-full bg-[#FFFEF7] px-2 md:px-10 py-20 overflow-hidden">
+    <div className="min-h-screen flex flex-col gap-10 w-full bg-[#FFFEF7] px-2 py-10 md:px-10 md:py-15 overflow-hidden">
       <div className="w-full">
         <div className="overflow-hidden">
           <h1 ref={headRef} className="text-xl font-[Regular]">WHAT WE DO</h1>
