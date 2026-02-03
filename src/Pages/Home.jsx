@@ -5,6 +5,7 @@ import DescPage from '../Components/DescPage'
 import ProjectsList from '../Components/ProjectsList'
 import Showcase from '../Components/Showcase'
 import Feedback from '../Components/Feedback'
+import News from '../Components/News'
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
         <ProjectsList />
         <Showcase/>
         <Feedback />
+        <News />
       </div>
     </>
   )

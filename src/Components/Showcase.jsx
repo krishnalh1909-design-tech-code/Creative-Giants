@@ -32,7 +32,7 @@ const Showcase = () => {
   return (
     <div
       ref={containerRef}
-      className="relative h-screen w-screen bg-[#070707] flex overflow-hidden -mt-0.5"
+      className="relative h-screen w-screen bg-white flex overflow-hidden -mt-0.5"
     >
       {/* CENTER TEXT */}
       <div className="pointer-events-none text-white w-full h-[40vh] flex flex-col items-center justify-center gap-2 absolute top-1/2 -translate-y-1/2 z-30">
@@ -53,9 +53,9 @@ const Showcase = () => {
       ))}
 
       {/* FADE MASK */}
-      <div className="pointer-events-none absolute inset-0 z-20
+      {/* <div className="pointer-events-none absolute inset-0 z-20
         bg-[linear-gradient(to_bottom,#070707_0%,transparent_18%,transparent_82%,#070707_100%)]"
-      />
+      /> */}
     </div>
   );
 };

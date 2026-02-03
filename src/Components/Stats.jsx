@@ -1,18 +1,43 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useSplitTextAnimation } from "../Hooks/useSplitTextAnimation.js";
+import { StatsData } from "./StatsData.jsx";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Stats = () => {
   const paraRef = useRef(null);
+  const statsRef = useRef(null);
 
   useSplitTextAnimation({
     textRef: paraRef,
   });
 
+  useEffect(() => {
+    const items = gsap.utils.toArray(".stats-item");
+
+    gsap.set(items, { opacity: 0, y: 40 });
+
+    gsap.to(items, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.15,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: statsRef.current,
+        start: "top 45%",
+        end: "top 10%",
+        // scrub: true, 
+      },
+    });
+  }, []);
+
   return (
-    <div className="min-h-[50vh] w-full">
+    <div ref={statsRef} className="min-h-[50vh] w-full">
       <p
         ref={paraRef}
-        className="block font-[Light] text-[#767675] w-full text-[15px] md:text-[18.5px] leading-5"
+        className="block font-[Light] text-[#767675] w-full text-[15px] md:text-[18.5px] sm:leading-5"
       >
         We go beyond the traditional agency model and empower people across different
         industries to realise their creative ambitions. From the marketing director looking for more
@@ -21,21 +46,23 @@ const Stats = () => {
         Our clients don’t hire us, they join us. And in doing so, become Creative Giants themselves.
       </p>
 
-      <div className="w-full mt-10 flex gap-5 flex-wrap sm:flex-nowrap overflow-hidden bg-green-400
-      ">
-        <div className="h-[30vh] w-full sm:w-[30%] bg-red-500">
+      <div className="w-full mt-10 flex gap-5 flex-wrap sm:flex-nowrap overflow-hidden">
+        {StatsData.map((item) => (
+          <div
+            key={item.id}
+            className="stats-item min-h-[25vh] text-black w-full sm:w-[32%] flex flex-col justify-between"
+          >
+            <div className="flex items-center gap-5 p-2 overflow-hidden">
+              <div className="text-white w-20 h-20">{item.svg}</div>
+              <h2 className="text-5xl font-[Light]">{item.value}</h2>
+            </div>
 
-        </div>
-
-        <div className="h-[30vh] w-full sm:w-[30%] bg-red-500">
-
-        </div>
-
-        <div className="h-[30vh] w-full sm:w-[30%] bg-red-500">
-
-        </div>
+            <div className="p-2">
+              <p className="opacity-80 text-[18px]">{item.title}</p>
+            </div>
+          </div>
+        ))}
       </div>
-
     </div>
   );
 };
