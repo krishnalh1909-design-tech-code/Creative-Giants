@@ -21,7 +21,7 @@ const DescPage = () => {
         <div className=" w-full">
           <p
             ref={textRef}
-            className="font-[Light] w-full text-xl md:text-3xl lg:text-6xl md:w-[90%] lg:w-[65%] mt-6 "
+            className="font-[Light] w-full text-xl md:text-3xl lg:text-6xl md:w-[90%] lg:w-[65%] mt-6 leading-12 "
           >
             We are artists, designers, producers, creatives, clients and
             technicians. We work together to create immersive experiences and
@@ -30,7 +30,7 @@ const DescPage = () => {
         </div>
       </div>
 
-      <div className="lg:w-[50vw] w-full md:w-full min-h-[50vh] flex bg-yellow-100 lg:ml-64 ml-0 md:ml-0 p-2.5">
+      <div className="lg:w-[50vw] w-full md:w-full min-h-[50vh] flex lg:ml-64 ml-0 md:ml-0 p-2.5">
         <Stats />
       </div>
 
