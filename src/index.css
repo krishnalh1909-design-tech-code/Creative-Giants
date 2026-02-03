@@ -10,8 +10,10 @@
   src: url("./assets/Fonts/Switzer-Regular.woff2") format("woff2");
 }
 
+
+
 body{
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 /* .text-mask {
