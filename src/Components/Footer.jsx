@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -6,94 +6,131 @@ const Footer = () => {
 
       <div className='min-h-[55vh] w-full flex flex-col sm:flex-row '>
 
-        <div className='h-[55vh] w-full sm:w-[32%]  bg-red-600'>
+        <div className='px-8 h-[55vh] w-full sm:w-[33%] flex flex-col justify-between'>
+
+          <div className=' flex flex-col h-[20vh] w-full '>
+
+            <div className='h-1/2 w-full '>
+
+            </div>
+
+            <div className='h-[50%] w-full text-[14px] leading-5 font-[Light] text-[#948D84]'>
+              <p>Founded by Simon Vaughan and Ben Kearns, we unite decades of combined expertise as visionary creatives and practical masterminds, redefining possibilities in the built environment.</p>
+            </div>
+
+          </div>
+
+          <div className="h-[15vh] flex flex-col text-xl font-[Light] text-[#948D84] w-full gap-2">
+
+            <div className="group w-fit">
+              <h1 className="relative cursor-pointer after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-white after:transition-all after:duration-300 after:ease-in-out  group-hover:after:w-full group-not-hover:after:left-full">
+                88 London Rd, Brighton BN1 4JF
+              </h1>
+            </div>
+
+            <div className="group w-fit">
+              <h1 className="relative cursor-pointer after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-white after:transition-all after:duration-300 after:ease-in-out  group-hover:after:w-full group-not-hover:after:left-full">
+                hello@creativegiants.art
+              </h1>
+            </div>
+          </div>
+
 
         </div>
 
-        <div className="h-[55vh] w-full sm:w-[36%] flex flex-col">
+        <div className="h-[55vh] w-full sm:w-[34%] flex flex-col border-x border-amber-50">
 
-          <div
-            className="group relative  flex items-center px-8 h-[20%] w-full overflow-hidden
-               after:content-[''] after:absolute after:inset-0
-               after:bg-[#FFD001] after:translate-y-full
-               after:transition-transform after:duration-500
-               hover:after:translate-y-0 after:z-10"
-          >
-            <h1
-              className="relative z-20 text-white text-[18px] font-[Regular]
-                 transition-colors duration-300
-                 group-hover:text-black"
+          <Link to="/" className="block h-[20%] w-full">
+            <div
+              className="group relative h-full flex items-center px-8 overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-[#FFD001] after:translate-y-[102%] after:transition-transform after:duration-500 hover:after:translate-y-0"
             >
-              HOME
-            </h1>
-          </div>
+              <h1
+                className="relative z-20 text-white text-[18px] font-[Regular] transition-colors duration-300 group-hover:text-black"
+              >
+                HOME
+              </h1>
+            </div>
+          </Link>
 
-          <div className="group relative h-[20%] flex items-center px-8 w-full overflow-hidden
-                  after:content-[''] after:absolute after:inset-0
-                  after:bg-[#009FFF] after:translate-y-[102%]
-                  after:transition-transform after:duration-500
-                  hover:after:translate-y-0">
-            <h1
-              className="relative z-20 text-white text-[18px] font-[Regular]
-                 transition-colors duration-300
-                 group-hover:text-black"
+          <Link to="/projects" className="block h-[20%] w-full">
+            <div
+              className="group relative h-full flex items-center px-8 overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-[#009FFF] after:translate-y-[102%] after:transition-transform after:duration-500 hover:after:translate-y-0"
             >
-              PROJECTS
-            </h1>
-          </div>
+              <h1
+                className="relative z-20 text-white text-[18px] font-[Regular] transition-colors duration-300 group-hover:text-black"
+              >
+                PROJECTS
+              </h1>
+            </div>
+          </Link>
 
-          <div className="group relative h-[20%] flex items-center px-8 w-full  overflow-hidden
-                  after:content-[''] after:absolute after:inset-0
-                  after:bg-[#48D1D6] after:translate-y-full
-                  after:transition-transform after:duration-500
-                  hover:after:translate-y-0">
-            <h1
-              className="relative z-20 text-white text-[18px] font-[Regular]
-                 transition-colors duration-300
-                 group-hover:text-black"
+          <Link to="/process" className="block h-[20%] w-full">
+            <div
+              className="group relative h-full flex items-center px-8 overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-[#48D1D6] after:translate-y-[102%] after:transition-transform after:duration-500 hover:after:translate-y-0"
             >
-              WHAT WE DO
-            </h1>
-          </div>
+              <h1
+                className="relative z-20 text-white text-[18px] font-[Regular] transition-colors duration-300 group-hover:text-black"
+              >
+                WHAT WE DO
+              </h1>
+            </div>
+          </Link>
 
-          <div className="group relative h-[20%] w-full flex items-center px-8 overflow-hidden
-                  after:content-[''] after:absolute after:inset-0
-                  after:bg-[#FC4C00] after:translate-y-full
-                  after:transition-transform after:duration-500
-                  hover:after:translate-y-0">
-            <h1
-              className="relative z-20 text-white text-[18px] font-[Regular]
-                 transition-colors duration-300
-                 group-hover:text-black"
+          <Link to="/news" className="block h-[20%] w-full">
+            <div
+              className="group relative h-full flex items-center px-8 overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-[#FC4C00] after:translate-y-[102%] after:transition-transform after:duration-500 hover:after:translate-y-0"
             >
-              LATEST NEWS
-            </h1>
-          </div>
+              <h1
+                className="relative z-20 text-white text-[18px] font-[Regular] transition-colors duration-300 group-hover:text-black"
+              >
+                LATEST NEWS
+              </h1>
+            </div>
+          </Link>
 
-          <div className="group relative h-[20%] w-full flex items-center px-8 overflow-hidden
-                  after:content-[''] after:absolute after:inset-0
-                  after:bg-[#EE77CF]  after:translate-y-[102%]
-                  after:transition-transform after:duration-500
-                  hover:after:translate-y-0">
-            <h1
-              className="relative z-20 text-white text-[18px] font-[Regular]
-                 transition-colors duration-300
-                 group-hover:text-black"
+          <Link to="/contact" className="block h-[20%] w-full">
+            <div
+              className="group relative h-full flex items-center px-8 overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-[#EE77CF] after:translate-y-[102%] after:transition-transform after:duration-500 hover:after:translate-y-0"
             >
-              GET IN TOUCH
-            </h1>
-          </div>
+              <h1
+                className="relative z-20 text-white text-[18px] font-[Regular] transition-colors duration-300 group-hover:text-black"
+              >
+                GET IN TOUCH
+              </h1>
+            </div>
+          </Link>
 
         </div>
 
 
-        <div className='h-[55vh] w-full sm:w-[32%]  bg-orange-800'>
+        <div className='px-8 h-[55vh] flex flex-col justify-between w-full sm:w-[33%]   text-white'>
+
+          <div className=' flex flex-col gap-2 h-[30vh] w-full'>
+
+            <div className='h-[50%] w-full flex items-end '>
+
+              <h1 className='font-[Regular] text-4xl'>Ready to kick start a discovery session?</h1>
+
+            </div>
+
+            <div className='h-[50%] w-[70%] font-[Light] text-[#948D84] text-[14px] leading-5'>
+              <p>Share your ideas with us, and we’ll begin turning your vision into reality today.</p>
+            </div>
+
+          </div>
+
+          <div className='h-[20%] w-full flex items-center justify-between font-[Light] text-[#948D84] '>
+
+            <h1>CREATIVE GIANTS ART LTD 2026</h1>
+            <h1>WEBSITE BY PHUNK</h1>
+
+          </div>
 
         </div>
 
       </div>
 
-      <div className='h-[55vh] w-full flex items-center justify-center'>
+      <div className='px-8 h-[55vh] w-full flex items-center justify-center'>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="100%"

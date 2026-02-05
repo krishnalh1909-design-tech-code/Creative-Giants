@@ -13,32 +13,32 @@ export const NewsData = [
   },
   {
     img: "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6853ebd2236c724389859c71_bffz9emy0znkf4ksb0lqon4b1q80.webp",
-    title: "Spotify Brand Stories",
+    title: "Missed Birthdays wins Gold at Cannes Lions 2025!",
     desc:
-      "Transforming music data into emotionally driven and shareable storytelling experiences.",
+      "We are incredibly proud to announce that Missed Birthdays has been awarded a Gold Outdoor Lion at the 2025 Cannes Lions International Festival of Creativity."
   },
   {
     img: "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6852e8dfa2b3746c7ac6708a_Shangri-La%202015_01%20%5BPG%20EDIT%5D.webp",
-    title: "Apple Product Film",
+    title: "The Rise of Visual Arts at UK Music Festivals",
     desc:
-      "Minimal storytelling that blends precision, emotion, and human-centered design.",
+      "In recent years, the UK’s music festival landscape has evolved into a vibrant meeting point for sound and vision. ",
   },
   {
     img: "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6852b5efc0a34877b6e2a689_Shoulders-giants.webp",
-    title: "Adidas Future Craft",
+    title: "Shoulder of Giants",
     desc:
-      "Exploring innovation, sustainability, and next-gen materials through design.",
+      "Your monthly look at where we’re finding inspiration in the world",
   },
   {
     img: "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6852da26041f05c0e756b6f0_Avi-hS.webp",
-    title: "Google Year in Search",
+    title: "Creative catch-ups: Iva Troj PhD",
     desc:
-      "A global narrative capturing humanity’s most meaningful moments of the year.",
+      "We catch up with the amazingly talented artist, whose epic oil paintings combine traditional styles with contemporary concepts and subjects. ",
   },
   {
     img: "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/67b496d9aaad16a766928207_Impossible%20to%20ignore.webp",
-    title: "Google Year in Search",
+    title: "Creative catch-ups: Sophie Oliveira Barata",
     desc:
-      "A global narrative capturing humanity’s most meaningful moments of the year.",
+      "A quick five minutes with world-renowned prosthetic artist and innovator as she shares her thoughts on creativity.",
   },
 ];

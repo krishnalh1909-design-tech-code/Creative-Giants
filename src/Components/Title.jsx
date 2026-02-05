@@ -7,11 +7,12 @@ gsap.registerPlugin(ScrollTrigger);
 const Title = () => {
   const titleRef = useRef(null);
   useEffect(() => {
-    gsap.from(
+    gsap.to(
       titleRef.current,
       {
-        y: "-100%",
-        duration: 1
+        top: "0%",
+        duration:1,
+        delay:1
       },
     );
 
@@ -30,7 +31,7 @@ const Title = () => {
 
   }, []);
   return (
-    <div ref={titleRef} className='absolute top-0 left-0 h-[40vh] mix-blend-screen backdrop-blur-3xl md:h-[70vh] w-full bg-[#ffffffb9]'>
+    <div ref={titleRef} className='absolute -top-full left-0 h-[40vh] mix-blend-screen backdrop-blur-3xl md:h-[70vh] w-full bg-[#ffffffb9]'>
       <div className='w-full h-full px-3 md:px-8  py-5 flex items-end  bg-[#FFFFFE]'>
         <svg
           xmlns="http://www.w3.org/2000/svg"
