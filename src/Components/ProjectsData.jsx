@@ -1,0 +1,58 @@
+export const ProjectsData = [
+  {
+    id: "CG_070",
+    title: "Halo Masterpiece",
+    brand: "Xbox",
+    agency: "Edelman",
+    category: "Production",
+  },
+  {
+    id: "CG_071",
+    title: "Neon Pulse",
+    brand: "Nike",
+    agency: "Wieden+Kennedy",
+    category: "Experience",
+  },
+  {
+    id: "CG_072",
+    title: "Future Motion",
+    brand: "Tesla",
+    agency: "Droga5",
+    category: "Installation",
+  },
+  {
+    id: "CG_073",
+    title: "Beyond Reality",
+    brand: "Meta",
+    agency: "AKQA",
+    category: "Immersive",
+  },
+  {
+    id: "CG_074",
+    title: "Urban Echo",
+    brand: "Adidas",
+    agency: "R/GA",
+    category: "Public Art",
+  },
+  {
+    id: "CG_075",
+    title: "Digital Dreams",
+    brand: "Google",
+    agency: "72andSunny",
+    category: "Campaign",
+  },
+  {
+    id: "CG_076",
+    title: "Sonic Horizon",
+    brand: "Spotify",
+    agency: "Mother",
+    category: "Production",
+  },
+  {
+    id: "CG_077",
+    title: "Infinite Play",
+    brand: "PlayStation",
+    agency: "BBH",
+    category: "Experience",
+  },
+];

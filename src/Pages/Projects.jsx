@@ -1,11 +1,15 @@
-import React from 'react'
+import { Outlet, Link } from "react-router-dom";
 
 const Projects = () => {
   return (
-    <div className='h-screen w-full bg-amber-100'>
-      
-    </div>
-  )
-}
+    <section className="min-h-screen">
+      <h1>Projects Page</h1>
 
-export default Projects
+      <Link to="list">Go to Projects List</Link>
+
+      <Outlet />
+    </section>
+  );
+};
+
+export default Projects;

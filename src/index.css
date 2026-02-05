@@ -11,6 +11,9 @@
 }
 
 
+* {
+  cursor: none;
+}
 
 body{
   overflow: hidden;

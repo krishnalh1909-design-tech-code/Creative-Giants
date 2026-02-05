@@ -9,11 +9,15 @@ import News from './Pages/News';
 import Contact from './Pages/Contact';
 import Process from './Pages/Process';
 import PageTransition from './Components/PageTransition';
+import CustomCursor from './Components/CustomCursor';
+import PageLayout from './Components/PageLayout';
+import ProjectsList from './Components/ProjectsList';
+import ProjectList from './Pages/ProjectList';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
-   const location = useLocation();
+  const location = useLocation();
   useEffect(() => {
     const lenis = new Lenis({
       smoothWheel: true,
@@ -36,11 +40,19 @@ const App = () => {
     <PageTransition>
       {(displayLocation) => (
         <Routes location={displayLocation}>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/process" element={<Process />} />
-          <Route path="/contact" element={<Contact />} />
+          {/* Routes WITH cursor */}
+          <Route element={<PageLayout />}>
+            <Route path="/" element={<Home />} />
+
+            <Route path="projects">
+              <Route index element={<Projects />} />
+              <Route path="list" element={<ProjectList />} />
+            </Route>
+
+            <Route path="news" element={<News />} />
+            <Route path="process" element={<Process />} />
+            <Route path="contact" element={<Contact />} />
+          </Route>
         </Routes>
       )}
     </PageTransition>
