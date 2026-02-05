@@ -2,8 +2,123 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='h-[120vh] w-full overflow-hidden bg-[#000000]'>
-      
+    <div className='min-h-[110vh] w-full overflow-hidden bg-[#000000] flex flex-col'>
+
+      <div className='min-h-[55vh] w-full flex flex-col sm:flex-row '>
+
+        <div className='h-[55vh] w-full sm:w-[32%]  bg-red-600'>
+
+        </div>
+
+        <div className="h-[55vh] w-full sm:w-[36%] flex flex-col">
+
+          <div
+            className="group relative  flex items-center px-8 h-[20%] w-full overflow-hidden
+               after:content-[''] after:absolute after:inset-0
+               after:bg-[#FFD001] after:translate-y-full
+               after:transition-transform after:duration-500
+               hover:after:translate-y-0 after:z-10"
+          >
+            <h1
+              className="relative z-20 text-white text-[18px] font-[Regular]
+                 transition-colors duration-300
+                 group-hover:text-black"
+            >
+              HOME
+            </h1>
+          </div>
+
+          <div className="group relative h-[20%] flex items-center px-8 w-full overflow-hidden
+                  after:content-[''] after:absolute after:inset-0
+                  after:bg-[#009FFF] after:translate-y-[102%]
+                  after:transition-transform after:duration-500
+                  hover:after:translate-y-0">
+            <h1
+              className="relative z-20 text-white text-[18px] font-[Regular]
+                 transition-colors duration-300
+                 group-hover:text-black"
+            >
+              PROJECTS
+            </h1>
+          </div>
+
+          <div className="group relative h-[20%] flex items-center px-8 w-full  overflow-hidden
+                  after:content-[''] after:absolute after:inset-0
+                  after:bg-[#48D1D6] after:translate-y-full
+                  after:transition-transform after:duration-500
+                  hover:after:translate-y-0">
+            <h1
+              className="relative z-20 text-white text-[18px] font-[Regular]
+                 transition-colors duration-300
+                 group-hover:text-black"
+            >
+              WHAT WE DO
+            </h1>
+          </div>
+
+          <div className="group relative h-[20%] w-full flex items-center px-8 overflow-hidden
+                  after:content-[''] after:absolute after:inset-0
+                  after:bg-[#FC4C00] after:translate-y-full
+                  after:transition-transform after:duration-500
+                  hover:after:translate-y-0">
+            <h1
+              className="relative z-20 text-white text-[18px] font-[Regular]
+                 transition-colors duration-300
+                 group-hover:text-black"
+            >
+              LATEST NEWS
+            </h1>
+          </div>
+
+          <div className="group relative h-[20%] w-full flex items-center px-8 overflow-hidden
+                  after:content-[''] after:absolute after:inset-0
+                  after:bg-[#EE77CF]  after:translate-y-[102%]
+                  after:transition-transform after:duration-500
+                  hover:after:translate-y-0">
+            <h1
+              className="relative z-20 text-white text-[18px] font-[Regular]
+                 transition-colors duration-300
+                 group-hover:text-black"
+            >
+              GET IN TOUCH
+            </h1>
+          </div>
+
+        </div>
+
+
+        <div className='h-[55vh] w-full sm:w-[32%]  bg-orange-800'>
+
+        </div>
+
+      </div>
+
+      <div className='h-[55vh] w-full flex items-center justify-center'>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="100%"
+          viewBox="0 0 307 68"
+          fill="none"
+          className="hero-svg"
+          style={{ opacity: 1 }}
+        >
+          <path d="M71.89 0.449951L68.24 67.04H79.15L79.43 52.52H81.7L81.98 67.04H92.92L89.37 0.449951H71.89ZM79.67 43.9799L80.15 18.5499L80.22 10.6H80.84L80.98 18.5499L81.5 43.9799H79.68H79.67Z" fill="#FFFEF7"></path>
+          <path d="M122.9 0.449951H112.33V67.04H122.9V0.449951Z" fill="#FFFEF7"></path>
+          <path d="M90.9199 9.45995H95.7699V67.04H106.37V9.38995H111.16V0.449951L90.9199 0.519951V9.45995Z" fill="#FFFEF7"></path>
+          <path d="M48.1099 31.2499V10.0799C48.1099 6.97994 47.2399 4.59994 45.4899 2.93994C43.7499 1.27994 41.1499 0.439941 37.7099 0.439941H24.9099V67.0299H35.4799V42.4199H36.6799L37.8199 67.0299H48.7299L46.1799 37.4999C47.4599 36.0099 48.1099 33.9199 48.1099 31.2399V31.2499ZM37.2399 31.7999C37.2399 33.4999 36.7899 34.3499 35.8999 34.3499H35.4899V9.45994H35.8999C36.7899 9.45994 37.2399 10.1599 37.2399 11.5599V31.7999Z" fill="#FFFEF7"></path>
+          <path d="M60.57 58.02V36.9599H67.83V28.43H60.57V9.45995H68.1V0.449951H50V67.04H68.24V58.02H60.57Z" fill="#FFFEF7"></path>
+          <path d="M11.77 0C7.87 0 4.93 0.98 2.96 2.94C0.99 4.9 0 7.97 0 12.15V55.34C0 63.46 3.92 67.52 11.77 67.52C15.51 67.52 18.33 66.65 20.23 64.92C22.13 63.19 23.09 60.46 23.09 56.75V38.96L12.59 33.69V57.81C12.61 58.61 12.34 59.02 11.76 59.02C11.14 59.02 10.83 58.62 10.83 57.81V9.67C10.81 8.87 11.08 8.47 11.66 8.47C12.28 8.47 12.59 8.87 12.59 9.67V31.82L23.09 37.11V10.81C23.09 7 22.16 4.25 20.29 2.55C18.42 0.85 15.58 0 11.77 0Z" fill="#FFFEF7"></path>
+          <path d="M252.08 18.2099L253.15 36.5099H252.56L248.57 0.449951H238.42V67.04H248.26V49L247.3 29.6299H247.85L251.94 67.04H261.96V0.449951H252.08V18.2099Z" fill="#FFFEF7"></path>
+          <path d="M263.13 9.45995H267.98V67.04H278.58V9.38995H283.36V0.449951L263.13 0.519951V9.45995Z" fill="#FFFEF7"></path>
+          <path d="M216.63 0.449951L212.98 67.04H223.89L224.17 52.52H226.44L226.72 67.04H237.66L234.12 0.449951H216.64H216.63ZM224.41 43.9799L224.89 18.5499L224.96 10.6H225.58L225.72 18.5499L226.24 43.9799H224.42H224.41Z" fill="#FFFEF7"></path>
+          <path d="M297.54 25.94L306.93 30.67V9.19001C306.93 6.23001 305.95 3.96001 304.01 2.38001C302.06 0.80001 299.27 0.0100098 295.65 0.0100098C292.03 0.0100098 288.96 0.90001 286.93 2.69001C284.9 4.48001 284.36 6.99001 284.36 10.23V25.82L284.29 31.97L294.79 37.25H294.83C296 37.86 296.58 38.85 296.58 40.21V58.04C296.58 58.75 296.27 59.11 295.65 59.11C295.03 59.11 294.69 58.71 294.69 57.91V39.08L284.19 33.79V58.4C284.17 64.5 288.01 67.55 295.72 67.55C299.39 67.55 302.26 66.62 304.32 64.76C306.38 62.9 306.84 60.29 306.84 56.91V37.88L306.93 32.48L296.43 27.2L296.15 27.05C295.16 26.43 294.67 25.44 294.67 24.09V9.57001C294.65 8.77001 294.95 8.37001 295.56 8.37001C296.13 8.37001 296.42 8.77001 296.42 9.57001V23.95C296.42 25.29 297.52 25.97 297.52 25.97L297.54 25.94Z" fill="#FFFEF7"></path>
+          <path d="M158.92 36.9599H166.18V28.43H158.92V9.45995H166.46V0.449951H148.36V67.04H166.6V58.02H158.92V36.9599Z" fill="#FFFEF7"></path>
+          <path d="M212.3 0.449951H201.73V67.04H212.3V0.449951Z" fill="#FFFEF7"></path>
+          <path d="M136.17 42.5L136.11 53.79H135.42L135.35 42.5L134.35 0.449951H123.58L127.5 67.04H143.64L147.6 0.449951H136.83L136.17 42.5Z" fill="#FFFEF7"></path>
+          <path d="M188.59 0C184.55 0 181.56 0.97 179.61 2.91C177.66 4.85 176.69 7.93 176.69 12.15V57.37C176.69 60.81 177.32 63.36 178.58 65.03C179.84 66.69 181.6 67.53 183.84 67.53C185.68 67.53 187.06 67.11 187.99 66.27C188.92 65.43 189.61 64.05 190.07 62.12H190.55L191.76 67.04H199.78V37.04L188.36 31.32V40.38L189.29 40.85V57.89C189.29 58.78 188.96 59.23 188.31 59.23C187.66 59.23 187.33 58.85 187.33 58.09V9.67C187.31 8.87 187.58 8.47 188.16 8.47C188.78 8.47 189.09 8.87 189.09 9.67V29.9L199.79 35.19V9.88C199.81 3.3 196.08 0 188.61 0H188.59Z" fill="#FFFEF7"></path>
+        </svg>
+      </div>
+
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { NewsData } from "./NewsData";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,7 +57,7 @@ const News = () => {
     };
 
     const onWheel = (e) => {
-      // 👉 ONLY react to horizontal gesture
+
       if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) return;
 
       e.preventDefault();
@@ -96,36 +97,37 @@ const News = () => {
         </div>
       </div>
 
-      {/* HORIZONTAL TRACKPAD SLIDER */}
+
       <div
         ref={wrapperRef}
-        className="px-10 h-[70vh] w-[190vw] overflow-hidden"
+        className="px-10 h-[70vh] w-[225vw] overflow-hidden"
       >
         <div
           ref={trackRef}
           className="flex items-center justify-center gap-5 h-full will-change-transform"
         >
-          {[...Array(6)].map((_, i) => (
+          {NewsData.map((item, i) => (
             <div
               key={i}
               className="flex flex-col h-[50vh] w-[30vw] shrink-0"
             >
-              <div className="h-[50vh] w-full bg-red-200" />
+              <div className="group h-[50vh] w-full overflow-hidden bg-red-200">
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out  group-hover:scale-125 "
+                />
+              </div>
 
-              <h1 className="mt-4">
-                CALM Missed Birthdays Wins Big
-              </h1>
 
-              <p className="mt-2 text-sm">
-                There are certain projects that offer a sense of pride,
-                regardless of how they’re received in the industry. In fact
-                our favourite work is often defined not by the number of awards
-                it receives, but by how emotionally invested we are in the idea.
-              </p>
+              <h1 className="mt-4">{item.title}</h1>
+
+              <p className="mt-2 text-sm">{item.desc}</p>
             </div>
           ))}
         </div>
       </div>
+
     </div>
   );
 };
