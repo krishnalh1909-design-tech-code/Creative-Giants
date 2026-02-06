@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ProjectsList = () => {
+const ProjectDemo = () => {
   const pinRef = useRef(null);
   const trackRef = useRef(null);
 
@@ -57,4 +57,4 @@ const ProjectsList = () => {
   );
 };
 
-export default ProjectsList;
+export default ProjectDemo;

@@ -4,9 +4,9 @@ const Footer = () => {
   return (
     <div className='min-h-[110vh] w-full overflow-hidden bg-[#000000] flex flex-col'>
 
-      <div className='min-h-[55vh] w-full flex flex-col sm:flex-row '>
+      <div className='px-8 lg:h-[55vh] w-full flex flex-col sm:flex-row '>
 
-        <div className='px-8 h-[55vh] w-full sm:w-[33%] flex flex-col justify-between'>
+        <div className='h-[55vh] w-full sm:w-[33%] flex flex-col justify-between'>
 
           <div className=' flex flex-col h-[20vh] w-full '>
 
@@ -38,11 +38,11 @@ const Footer = () => {
 
         </div>
 
-        <div className="h-[55vh] w-full sm:w-[34%] flex flex-col border-x border-amber-50">
+        <div className=" h-[55vh] w-full sm:w-[34%] flex flex-col border-x-0 lg:border-x border-[#8c8a8a5f]">
 
-          <Link to="/" className="block h-[20%] w-full">
+          <Link to="/" className="block h-[20%] border-[0.1px] border-b-[#8c8a8a5f] w-full">
             <div
-              className="group relative h-full flex items-center px-8 overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-[#FFD001] after:translate-y-[102%] after:transition-transform after:duration-500 hover:after:translate-y-0"
+              className="group relative h-full flex items-center px-0 lg:px-8 overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-[#FFD001] after:translate-y-[102%] after:transition-transform after:duration-500 hover:after:translate-y-0"
             >
               <h1
                 className="relative z-20 text-white text-[18px] font-[Regular] transition-colors duration-300 group-hover:text-black"
@@ -52,9 +52,9 @@ const Footer = () => {
             </div>
           </Link>
 
-          <Link to="/projects" className="block h-[20%] w-full">
+          <Link to="/projects" className="block h-[20%] border-[0.1px] border-b-[#8c8a8a5f]  w-full">
             <div
-              className="group relative h-full flex items-center px-8 overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-[#009FFF] after:translate-y-[102%] after:transition-transform after:duration-500 hover:after:translate-y-0"
+              className="group relative h-full flex items-center px-0 lg:px-8 overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-[#009FFF] after:translate-y-[102%] after:transition-transform after:duration-500 hover:after:translate-y-0"
             >
               <h1
                 className="relative z-20 text-white text-[18px] font-[Regular] transition-colors duration-300 group-hover:text-black"
@@ -64,9 +64,9 @@ const Footer = () => {
             </div>
           </Link>
 
-          <Link to="/process" className="block h-[20%] w-full">
+          <Link to="/process" className="block h-[20%] border-[0.1px] border-b-[#8c8a8a5f]  w-full">
             <div
-              className="group relative h-full flex items-center px-8 overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-[#48D1D6] after:translate-y-[102%] after:transition-transform after:duration-500 hover:after:translate-y-0"
+              className="group relative h-full flex items-center px-0 lg:px-8 overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-[#48D1D6] after:translate-y-[102%] after:transition-transform after:duration-500 hover:after:translate-y-0"
             >
               <h1
                 className="relative z-20 text-white text-[18px] font-[Regular] transition-colors duration-300 group-hover:text-black"
@@ -76,9 +76,9 @@ const Footer = () => {
             </div>
           </Link>
 
-          <Link to="/news" className="block h-[20%] w-full">
+          <Link to="/news" className="block h-[20%] border-[0.1px] border-b-[#8c8a8a5f]  w-full">
             <div
-              className="group relative h-full flex items-center px-8 overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-[#FC4C00] after:translate-y-[102%] after:transition-transform after:duration-500 hover:after:translate-y-0"
+              className="group relative h-full flex items-center px-0 lg:px-8 overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-[#FC4C00] after:translate-y-[102%] after:transition-transform after:duration-500 hover:after:translate-y-0"
             >
               <h1
                 className="relative z-20 text-white text-[18px] font-[Regular] transition-colors duration-300 group-hover:text-black"
@@ -88,9 +88,9 @@ const Footer = () => {
             </div>
           </Link>
 
-          <Link to="/contact" className="block h-[20%] w-full">
+          <Link to="/contact" className="block h-[20%] border-[0.1px] lg:border-0  border-b-[#8c8a8a5f]  w-full">
             <div
-              className="group relative h-full flex items-center px-8 overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-[#EE77CF] after:translate-y-[102%] after:transition-transform after:duration-500 hover:after:translate-y-0"
+              className="group relative h-full flex items-center px-0 lg:px-8 overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-[#EE77CF] after:translate-y-[102%] after:transition-transform after:duration-500 hover:after:translate-y-0"
             >
               <h1
                 className="relative z-20 text-white text-[18px] font-[Regular] transition-colors duration-300 group-hover:text-black"
@@ -103,23 +103,23 @@ const Footer = () => {
         </div>
 
 
-        <div className='px-8 h-[55vh] flex flex-col justify-between w-full sm:w-[33%]   text-white'>
+        <div className='h-[30vh] lg:px-5 px-0 lg:h-[55vh] flex flex-col justify-between w-full sm:w-[33%] text-white'>
 
-          <div className=' flex flex-col gap-2 h-[30vh] w-full'>
+          <div className=' flex flex-col gap-8 lg:gap-2 h-[30vh] w-full'>
 
             <div className='h-[50%] w-full flex items-end '>
 
-              <h1 className='font-[Regular] text-4xl'>Ready to kick start a discovery session?</h1>
+              <h1 className='font-[Regular] text-xl lg:text-4xl'>Ready to kick start a discovery session?</h1>
 
             </div>
 
-            <div className='h-[50%] w-[70%] font-[Light] text-[#948D84] text-[14px] leading-5'>
+            <div className='h-[50%] w-full lg:w-[70%] font-[Light] text-[#948D84] text-[14px] leading-5'>
               <p>Share your ideas with us, and we’ll begin turning your vision into reality today.</p>
             </div>
 
           </div>
 
-          <div className='h-[20%] w-full flex items-center justify-between font-[Light] text-[#948D84] '>
+          <div className='h-[20%] text-[12px] w-full flex items-center justify-between font-[Light] text-[#948D84] '>
 
             <h1>CREATIVE GIANTS ART LTD 2026</h1>
             <h1>WEBSITE BY PHUNK</h1>
@@ -130,7 +130,7 @@ const Footer = () => {
 
       </div>
 
-      <div className='px-8 h-[55vh] w-full flex items-center justify-center'>
+      <div className=' px-8 h-[20vh] lg:h-[55vh] w-full flex items-center justify-center'>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="100%"

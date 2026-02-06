@@ -1,61 +1,63 @@
-import React, { useEffect } from 'react'
-import { Route, Routes, useLocation } from 'react-router-dom'
-import Home from './Pages/Home'
-import Lenis from "lenis";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import Projects from './Pages/Projects';
-import News from './Pages/News';
-import Contact from './Pages/Contact';
-import Process from './Pages/Process';
-import PageTransition from './Components/PageTransition';
-import CustomCursor from './Components/CustomCursor';
-import PageLayout from './Components/PageLayout';
-import ProjectsList from './Components/ProjectsList';
-import ProjectList from './Pages/ProjectList';
+import { useEffect, useRef } from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Lenis from "lenis"
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
 
-gsap.registerPlugin(ScrollTrigger);
+import Home from './Pages/Home'
+import Projects from './Pages/Projects'
+import News from './Pages/News'
+import Contact from './Pages/Contact'
+import Process from './Pages/Process'
+import ProjectList from './Pages/ProjectList'
+
+import PageTransition from './Components/PageTransition'
+import PageLayout from './Components/PageLayout'
+import ScrollToTop from './Components/ScrollToTop'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const App = () => {
-  const location = useLocation();
+  const lenisRef = useRef(null)
+
   useEffect(() => {
-    const lenis = new Lenis({
-      smoothWheel: true,
-    });
+    const lenis = new Lenis({ smoothWheel: true })
+    lenisRef.current = lenis
 
-    lenis.on("scroll", ScrollTrigger.update);
+    const tick = (time) => {
+      lenis.raf(time * 1000)
+    }
 
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 500);
-    });
-
-    gsap.ticker.lagSmoothing(0);
+    gsap.ticker.add(tick)
+    gsap.ticker.lagSmoothing(0)
 
     return () => {
-      lenis.destroy();
-      gsap.ticker.remove();
-    };
-  }, []);
+      gsap.ticker.remove(tick)
+      lenis.destroy()
+    }
+  }, [])
+
   return (
-    <PageTransition>
-      {(displayLocation) => (
-        <Routes location={displayLocation}>
-          {/* Routes WITH cursor */}
-          <Route element={<PageLayout />}>
-            <Route path="/" element={<Home />} />
+    <>
+      <ScrollToTop lenis={lenisRef.current} />
 
-            <Route path="projects">
-              <Route index element={<Projects />} />
-              <Route path="list" element={<ProjectList />} />
+      <PageTransition>
+        {(displayLocation) => (
+          <Routes location={displayLocation}>
+            <Route element={<PageLayout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="projects">
+                <Route index element={<Projects />} />
+                <Route path="list" element={<ProjectList />} />
+              </Route>
+              <Route path="news" element={<News />} />
+              <Route path="process" element={<Process />} />
+              <Route path="contact" element={<Contact />} />
             </Route>
-
-            <Route path="news" element={<News />} />
-            <Route path="process" element={<Process />} />
-            <Route path="contact" element={<Contact />} />
-          </Route>
-        </Routes>
-      )}
-    </PageTransition>
+          </Routes>
+        )}
+      </PageTransition>
+    </>
   )
 }
 

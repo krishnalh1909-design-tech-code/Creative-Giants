@@ -18,7 +18,7 @@ const PageTransition = ({ children }) => {
 
     const tl = gsap.timeline({
       onComplete: () => {
-        setDisplayLocation(location); // 🔥 route swap happens HERE
+        setDisplayLocation(location);
         setIsAnimating(false);
       },
     });
@@ -46,13 +46,10 @@ const PageTransition = ({ children }) => {
 
   return (
     <>
-      {/* Overlay */}
       <div
         ref={overlayRef}
-        className="fixed inset-0 bg-black z-999 translate-y-full"
+        className="fixed inset-0 bg-[#494747] z-999 translate-y-full"
       />
-
-      {/* Rendered routes */}
       {children(displayLocation)}
     </>
   );

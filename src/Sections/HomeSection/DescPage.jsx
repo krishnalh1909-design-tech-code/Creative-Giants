@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useSplitTextAnimation } from "../Hooks/useSplitTextAnimation.js";
+import { useSplitTextAnimation } from "../../Hooks/useSplitTextAnimation.js";
 import Stats from "./Stats.jsx";
 
 const DescPage = () => {
@@ -12,7 +12,7 @@ const DescPage = () => {
   });
 
   return (
-    <div className="min-h-screen flex flex-col gap-10 w-full bg-[#FFFEF7] px-2 py-10 md:px-10 md:py-15 overflow-hidden">
+    <div className="min-h-screen flex flex-col gap-10 w-full bg-[#FFFEF7] px-5 py-10 md:px-10 md:py-15 overflow-hidden">
       <div className="w-full">
         <div className="overflow-hidden">
           <h1 ref={headRef} className="text-xl font-[Regular]">WHAT WE DO</h1>
@@ -30,7 +30,7 @@ const DescPage = () => {
         </div>
       </div>
 
-      <div className="lg:w-[50vw] w-full md:w-full min-h-[50vh] flex lg:ml-64 ml-0 md:ml-0 p-2.5">
+      <div className="lg:w-[50vw] w-full md:w-full min-h-[50vh] flex lg:ml-64 ml-0 md:ml-0 ">
         <Stats />
       </div>
 

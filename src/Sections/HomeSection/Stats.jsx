@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useSplitTextAnimation } from "../Hooks/useSplitTextAnimation.js";
-import { StatsData } from "./StatsData.jsx";
+import { useSplitTextAnimation } from "../../Hooks/useSplitTextAnimation.js";
+import { StatsData } from "../../Components/StatsData.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,7 +37,7 @@ const Stats = () => {
     <div ref={statsRef} className="min-h-[50vh] w-full">
       <p
         ref={paraRef}
-        className="block font-[Light] text-[#767675] w-full text-[15px] md:text-[18.5px] sm:leading-5"
+        className="block font-[Light] text-[#767675] w-full text-[15px] md:text-[18.5px]"
       >
         We go beyond the traditional agency model and empower people across different
         industries to realise their creative ambitions. From the marketing director looking for more

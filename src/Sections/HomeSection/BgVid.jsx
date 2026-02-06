@@ -1,5 +1,5 @@
 import React from 'react'
-import BgVideo from "../assets/Videos/CreativeBgVideo.mp4"
+import BgVideo from "../../assets/Videos/CreativeBgVideo.mp4"
 
 const BgVid = () => {
   return (

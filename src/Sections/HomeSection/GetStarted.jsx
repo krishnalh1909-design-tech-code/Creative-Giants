@@ -4,8 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Showcase = () => {
-  const showcaseData = [
+const GetStarted = () => {
+  const GetStartedData = [
     {
       type: "video",
       src: "https://cdn.prod.website-files.com/678fc13a6195245eefbb1f34%2F684fe7eb7bbb5f98f878e6b7_LG%20-%20photoreal%20fast-mp4%20Comp%201-transcode.mp4",
@@ -75,10 +75,10 @@ const Showcase = () => {
       </div>
 
 
-      {showcaseData.map((item, i) => (
+      {GetStartedData.map((item, i) => (
         <div
           key={i}
-          className={`h-full flex-1 px-2 ${i < showcaseData.length - 1 ? "border-r border-white" : ""
+          className={`h-full flex-1 px-2 ${i < GetStartedData.length - 1 ? "border-r border-white" : ""
             } ${i > 3 ? "hidden sm:flex" : ""}`}
         >
           <div
@@ -115,4 +115,4 @@ const Showcase = () => {
   );
 };
 
-export default Showcase;
+export default GetStarted;

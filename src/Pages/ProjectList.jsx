@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { ProjectsData } from '../Components/ProjectsData'
 import Footer from '../Components/Footer';
 import Mailing from '../Components/Mailing';
+import Navbar from '../Components/Navbar';
 
 const ProjectList = () => {
   const [bgColor, setBgColor] = useState("#000000");
@@ -13,6 +14,7 @@ const ProjectList = () => {
   };
   return (
     <>
+      <Navbar menuBg="bg-white" menuText="text-black=" />
       <div style={{ backgroundColor: bgColor }} className='min-h-screen w-full flex flex-col font-[Light] text-white '>
 
         <div className='h-[70vh] w-full gap-5 flex flex-col items-center justify-center '>
