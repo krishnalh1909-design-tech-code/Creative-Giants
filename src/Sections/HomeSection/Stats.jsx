@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useSplitTextAnimation } from "../../Hooks/useSplitTextAnimation.js";
-import { StatsData } from "../../Components/StatsData.jsx";
+import { StatsData } from "./StatsData.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
