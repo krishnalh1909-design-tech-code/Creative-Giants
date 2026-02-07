@@ -1,4 +1,4 @@
-export const ProjectsData = [
+export const ProjectsListData = [
   {
     id: "CG_070",
     title: "Halo Masterpiece",

@@ -4,9 +4,9 @@ const Footer = () => {
   return (
     <div className='min-h-[110vh] w-full overflow-hidden bg-[#000000] flex flex-col'>
 
-      <div className='px-8 lg:h-[55vh] w-full flex flex-col sm:flex-row '>
+      <div className='px-5 lg:h-[55vh] w-full flex flex-col lg:flex-row '>
 
-        <div className='h-[55vh] w-full sm:w-[33%] flex flex-col justify-between'>
+        <div className='h-[50vh] lg:h-[55vh] w-full lg:w-[33%] md:w-full flex flex-col justify-between'>
 
           <div className=' flex flex-col h-[20vh] w-full '>
 
@@ -14,7 +14,7 @@ const Footer = () => {
 
             </div>
 
-            <div className='h-[50%] w-full text-[14px] leading-5 font-[Light] text-[#948D84]'>
+            <div className='h-[50%] w-full text-[14px] md:text-[17px] lg:text-[15px] lg:w-[90%] leading-5 font-[Light] text-[#948D84]'>
               <p>Founded by Simon Vaughan and Ben Kearns, we unite decades of combined expertise as visionary creatives and practical masterminds, redefining possibilities in the built environment.</p>
             </div>
 
@@ -38,7 +38,7 @@ const Footer = () => {
 
         </div>
 
-        <div className=" h-[55vh] w-full sm:w-[34%] flex flex-col border-x-0 lg:border-x border-[#8c8a8a5f]">
+        <div className=" h-[55vh] w-full lg:w-[34%] md:w-full flex flex-col border-x-0 lg:border-x border-[#8c8a8a5f]">
 
           <Link to="/" className="block h-[20%] border-[0.1px] border-b-[#8c8a8a5f] w-full">
             <div
@@ -103,7 +103,7 @@ const Footer = () => {
         </div>
 
 
-        <div className='h-[30vh] lg:px-5 px-0 lg:h-[55vh] flex flex-col justify-between w-full sm:w-[33%] text-white'>
+        <div className='h-[30vh] lg:px-5 px-0  lg:h-[55vh] md:w-full flex flex-col justify-between w-full lg:w-[33%] text-white'>
 
           <div className=' flex flex-col gap-8 lg:gap-2 h-[30vh] w-full'>
 
@@ -130,7 +130,7 @@ const Footer = () => {
 
       </div>
 
-      <div className=' px-8 h-[20vh] lg:h-[55vh] w-full flex items-center justify-center'>
+      <div className=' px-5 h-[25vh] sm:h-[30vh] md:h-[40vh] lg:h-[55vh] w-full flex items-center justify-center'>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="100%"
