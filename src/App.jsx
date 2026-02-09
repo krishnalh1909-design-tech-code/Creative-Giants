@@ -13,7 +13,7 @@ import ProjectList from './Pages/ProjectList'
 
 import PageTransition from './Components/PageTransition'
 import PageLayout from './Components/PageLayout'
-import ScrollToTop from './Components/ScrollToTop'
+// import ScrollToTop from './Components/ScrollToTop'
 import ProjectDetail from './Sections/ProjectSection/ProjectDetail'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -45,9 +45,8 @@ const App = () => {
 
   return (
     <>
-      <ScrollToTop lenisRef={lenisRef} delay={1000} />
-
-      <PageTransition>
+      {/* <ScrollToTop lenisRef={lenisRef} delay={1000} /> */}
+      <PageTransition lenisRef={lenisRef}>
         {(displayLocation) => (
           <Routes location={displayLocation}>
             <Route element={<PageLayout />}>

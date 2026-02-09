@@ -5,8 +5,10 @@ import Navbar from "./Navbar";
 const PageLayout = () => {
   return (
     <>
-      <CustomCursor />
-      <Outlet />
+      <main className="page">
+        <CustomCursor/>
+        <Outlet />
+      </main>
     </>
   );
 };

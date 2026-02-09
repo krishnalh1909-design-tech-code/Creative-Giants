@@ -1,23 +1,29 @@
-import { useLayoutEffect } from "react"
-import { useLocation } from "react-router-dom"
+// import { useLayoutEffect } from "react"
+// import { useLocation } from "react-router-dom"
+// import gsap from "gsap"
+// import ScrollTrigger from "gsap/ScrollTrigger"
 
-const ScrollToTop = ({ lenisRef, delay = 1000 }) => {
-  const { pathname } = useLocation()
+// const ScrollToTop = ({ lenisRef }) => {
+//   const { pathname } = useLocation()
 
-  useLayoutEffect(() => {
-    if (!lenisRef?.current) return
+//   useLayoutEffect(() => {
+//     if (!lenisRef?.current) return
 
-    const timeout = setTimeout(() => {
-      lenisRef.current.scrollTo(0, {
-        immediate: true,
-        force: true,
-      })
-    }, delay)
+//     // 1️⃣ Stop any ongoing scroll
+//     lenisRef.current.stop()
 
-    return () => clearTimeout(timeout)
-  }, [pathname, delay])
+//     // 2️⃣ HARD reset scroll BEFORE paint
+//     lenisRef.current.scrollTo(0, { immediate: true })
 
-  return null
-}
+//     // 3️⃣ Clear GSAP’s scroll memory
+//     ScrollTrigger.clearScrollMemory()
+//     ScrollTrigger.refresh(true)
 
-export default ScrollToTop
+//     // 4️⃣ Resume scrolling
+//     lenisRef.current.start()
+//   }, [pathname])
+
+//   return null
+// }
+
+// export default ScrollToTop
