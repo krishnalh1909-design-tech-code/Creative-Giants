@@ -56,7 +56,7 @@ const App = () => {
                 <Route index element={<Projects />} />
                 <Route path="list" element={<ProjectList />} />
 
-                {/* ✅ Dynamic route */}
+                {/* Dynamic route */}
                 <Route path=":id" element={<ProjectDetail />} />
               </Route>
 
