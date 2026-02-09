@@ -10,8 +10,12 @@ const Stats = () => {
   const paraRef = useRef(null);
   const statsRef = useRef(null);
 
-  useSplitTextAnimation({
-    textRef: paraRef,
+   useSplitTextAnimation({
+    para: {
+      ref: paraRef,
+      delay: 0.4,
+      paddingBottom: 5,
+    },
   });
 
   useEffect(() => {

@@ -2,14 +2,33 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
+import { useSplitTextAnimation } from "../../Hooks/useSplitTextAnimation";
 
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ProcessHeroSection = () => {
   const paraRef = useRef()
-  const para2Ref = useRef()
+  const textRef = useRef()
   const headRef = useRef()
+
+  useSplitTextAnimation({
+    text: {
+      ref: textRef,
+      delay: 2,
+      paddingBottom: 10,
+    },
+    heading: {
+      ref: headRef,
+      delay: 2,
+    },
+    para: {
+      ref: paraRef,
+      delay: 2,
+      paddingBottom: 1,
+    },
+  });
+
 
   return (
     <div className='min-h-screen w-full bg-[#FFFEF7]'>
@@ -21,7 +40,7 @@ const ProcessHeroSection = () => {
                   flex items-center
                   text-lg sm:text-xl md:text-3xl lg:text-5xl">
           <p
-            ref={paraRef}
+            ref={textRef}
             className="w-full sm:w-[90%] lg:w-[70%]"
           >
             From concept to delivery (and beyond), our Playbook ensures every
@@ -45,7 +64,7 @@ const ProcessHeroSection = () => {
           </div>
 
           <div>
-            <p ref={para2Ref}>
+            <p ref={paraRef}>
               We believe impact is more than just engagement numbers or press
               coverage. We cover the full life-cycle of every project – instilling
               sustainable values, materials and techniques wherever possible. This

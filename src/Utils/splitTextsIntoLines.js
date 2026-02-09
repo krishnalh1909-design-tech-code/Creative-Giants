@@ -1,4 +1,4 @@
-export function splitTextIntoLines(element) {
+export function splitTextIntoLines(element, paddingBottom = 12) {
   element.style.display = "block";
 
   const words = element.textContent.trim().split(" ");
@@ -7,7 +7,6 @@ export function splitTextIntoLines(element) {
   const lines = [];
   const containerWidth = element.getBoundingClientRect().width;
 
-  // get computed line height
   const computedStyle = window.getComputedStyle(element);
   const lineHeight = computedStyle.lineHeight;
 
@@ -17,11 +16,10 @@ export function splitTextIntoLines(element) {
   lineMask.style.display = "block";
   lineMask.style.overflow = "hidden";
   lineMask.style.lineHeight = lineHeight;
-  
 
   lineText.style.display = "inline-block";
   lineText.style.whiteSpace = "nowrap";
-  lineText.style.paddingBottom="12px"
+  lineText.style.paddingBottom = `${paddingBottom}px`;
 
   lineMask.appendChild(lineText);
   element.appendChild(lineMask);
@@ -44,7 +42,7 @@ export function splitTextIntoLines(element) {
       lineText.style.display = "inline-block";
       lineText.style.whiteSpace = "nowrap";
       lineText.textContent = word;
-      lineText.style.paddingBottom="12px"
+      lineText.style.paddingBottom = `${paddingBottom}px`;
 
       lineMask.appendChild(lineText);
       element.appendChild(lineMask);

@@ -1,64 +1,90 @@
 import { useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { splitTextIntoLines } from "../Utils/splitTextsIntoLines.js";
+import {splitTextIntoLines} from "../Utils/splitTextsIntoLines"
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function useSplitTextAnimation({
-  headingRef,
-  textRef,
-  delay = 0, // ⬅️ delay AFTER page transition
+  heading: {
+    ref: headingRef,
+    delay: headingDelay = 0,
+  } = {},
+
+  text: {
+    ref: textRef,
+    delay: textDelay = 0,
+    paddingBottom: textPaddingBottom = 12,
+  } = {},
+
+  para: {
+    ref: paraRef,
+    delay: paraDelay = 0,
+    paddingBottom: paraPaddingBottom = 12,
+  } = {},
 }) {
   useLayoutEffect(() => {
-    const heading = headingRef?.current;
-    const textEl = textRef?.current;
-
-    if (!textEl) return;
-
     const ctx = gsap.context(() => {
       document.fonts.ready.then(() => {
-        // ⏳ WAIT before creating ScrollTriggers
-        gsap.delayedCall(delay, () => {
-          // Reset split
-          textEl.innerHTML = textEl.textContent;
-          delete textEl.dataset.split;
-
-          // Heading animation
-          if (heading) {
-            gsap.from(heading, {
-              yPercent: 120,
-              opacity: 0,
-              duration: 0.8,
-              ease: "power3.out",
-              scrollTrigger: {
-                trigger: heading,
-                start: "top 80%",
-                once: true,
-              },
-            });
-          }
-
-          // Split + animate paragraph
-          const lines = splitTextIntoLines(textEl);
-
-          gsap.from(lines, {
-            yPercent: 100,
-            duration: 1.1,
-            ease: "power4.out",
-            stagger: 0.08,
+        // ---------------- HEADING ----------------
+        if (headingRef?.current) {
+          gsap.from(headingRef.current, {
+            yPercent: 120,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            delay: headingDelay,
             scrollTrigger: {
-              trigger: textEl,
-              start: "top 70%",
+              trigger: headingRef.current,
+              start: "top 80%",
               once: true,
             },
           });
+        }
 
-          ScrollTrigger.refresh();
-        });
+        // ---------------- TEXT ----------------
+        if (textRef?.current) {
+          animateSplitText(
+            textRef.current,
+            textPaddingBottom,
+            textDelay
+          );
+        }
+
+        // ---------------- PARA ----------------
+        if (paraRef?.current) {
+          animateSplitText(
+            paraRef.current,
+            paraPaddingBottom,
+            paraDelay
+          );
+        }
+
+        ScrollTrigger.refresh();
       });
     });
 
     return () => ctx.revert();
   }, []);
+}
+
+// 🔹 shared split + animation
+function animateSplitText(element, paddingBottom, delay) {
+  element.innerHTML = element.textContent;
+  delete element.dataset.split;
+
+  const lines = splitTextIntoLines(element, paddingBottom);
+
+  gsap.from(lines, {
+    yPercent: 100,
+    duration: 1.1,
+    ease: "power4.out",
+    stagger: 0.08,
+    delay,
+    scrollTrigger: {
+      trigger: element,
+      start: "top 70%",
+      once: true,
+    },
+  });
 }
