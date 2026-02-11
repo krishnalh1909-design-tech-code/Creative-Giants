@@ -13,7 +13,7 @@ const Stats = () => {
    useSplitTextAnimation({
     para: {
       ref: paraRef,
-      delay: 0.4,
+      delay: 0,
       paddingBottom: 5,
     },
   });

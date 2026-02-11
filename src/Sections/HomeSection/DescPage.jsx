@@ -16,6 +16,7 @@ const DescPage = () => {
       delay: 0.4,
       paddingBottom: 15,
     },
+    
 
   });
 

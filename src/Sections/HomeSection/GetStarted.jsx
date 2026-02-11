@@ -23,12 +23,12 @@ const GetStarted = () => {
     },
     {
       type: "image",
-      src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+      src: "https://cdn.prod.website-files.com/678fc13a6195245eefbb1f34/6852dac5ffc41d70c5599402_balloon-Image.webp",
       height: "50vh"
     },
     {
       type: "image",
-      src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+      src: "https://cdn.prod.website-files.com/678fc13a6195245eefbb1f34/6798b7ef9b639d68cf609006_Get%20Started%20Image%204.webp",
       height: "35vh"
     },
     {
