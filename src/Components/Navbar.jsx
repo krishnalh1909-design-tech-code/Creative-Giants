@@ -73,7 +73,7 @@ const Navbar = ({
 
       <div
         onClick={() => setOpen(prev => !prev)}
-        className={`overflow-hidden cursor-pointer w-20 h-[50px] lg:w-[100px] rounded-[30px] fixed right-3 top-5 lg:top-8 lg:right-8 z-100 border-[0.2px] border-gray-50 ${menuBg} ${menuText}`}
+        className={`overflow-hidden cursor-pointer font-[Regular] w-20 h-[50px] lg:w-[100px] rounded-[30px] fixed right-3 top-5 lg:top-8 lg:right-8 z-100 ${menuBg} ${menuText}`}
       >
         <div
           className={`absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-in-out ${open ? "-translate-y-full" : "translate-y-0"

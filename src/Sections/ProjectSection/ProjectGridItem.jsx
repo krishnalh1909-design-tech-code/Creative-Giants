@@ -18,7 +18,7 @@ const ProjectGridItem = ({ item }) => {
   });
 
   return (
-    <div className="min-h-screen w-full sm:w-1/2 lg:w-[33.3%] px-5 py-5 flex flex-col">
+    <div className="min-h-[72vh]  gap-2   w-full sm:w-1/2 lg:w-[33.3%] px-8 py-2 flex flex-col">
       {/* Image */}
       <div className="overflow-hidden h-[55vh] sm:h-[60vh] lg:h-[70vh]">
         <img
@@ -29,10 +29,10 @@ const ProjectGridItem = ({ item }) => {
       </div>
 
       {/* Heading */}
-      <div className="overflow-hidden mt-3">
+      <div className="overflow-hidden mt-5">
         <h1
           ref={headRef}
-          className="text-sm sm:text-base"
+          className="text-xl sm:text-base"
         >
           {item.projectNo}
         </h1>
@@ -42,7 +42,7 @@ const ProjectGridItem = ({ item }) => {
       <div className="overflow-hidden">
         <h1
           ref={textRef}
-          className="text-2xl sm:text-4xl lg:text-5xl leading-tight"
+          className="text-2xl sm:text-4xl lg:text-4xl leading-tight"
         >
           {item.title}
         </h1>
