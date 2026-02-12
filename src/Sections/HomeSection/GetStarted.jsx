@@ -41,34 +41,62 @@ const GetStarted = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const cards = gsap.utils.toArray(".showcase-card");
+    const ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray(".showcase-card");
+      const text = document.querySelector(".center-text");
 
-    gsap.set(cards, { yPercent: 520 });
+      gsap.set(cards, { yPercent: 520 });
 
-    gsap.to(cards, {
-      yPercent: -100,
-      ease: "none",
-      stagger: 0.12,
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: () => `+=${window.innerHeight * 2}`,
-        scrub: true,
-        pin: true,
-        pinSpacing: true,
-        anticipatePin: 1,
-      },
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: () => `+=${window.innerHeight * 2}`,
+          scrub: true,
+          pin: true,
+          pinSpacing: true,
+          anticipatePin: 1,
+        },
+      });
+
+      // Cards animation
+      tl.to(cards, {
+        yPercent: -100,
+        ease: "none",
+        stagger: 0.12,
+      });
+
+      // Background + text color change at the END
+      tl.to(
+        containerRef.current,
+        {
+          backgroundColor: "#ffffff",
+          duration: 0.4,
+        },
+        ">-0.3"
+      ).to(
+        text,
+        {
+          color: "#000000",
+          duration: 0.4,
+        },
+        "<"
+      );
     });
 
+    return () => ctx.revert();
   }, []);
+
 
   return (
     <div
       ref={containerRef}
-      className="relative h-screen w-screen bg-black flex overflow-hidden -mt-0.5"
+      className="relative h-screen w-screen bg-black flex overflow-hidden -mt-0.5 transition-colors duration-300"
     >
+
       {/* CENTER TEXT */}
-      <div className="pointer-events-none text-white w-full h-[40vh] flex flex-col items-center justify-center gap-2 absolute top-1/2 -translate-y-1/2 z-30 mix-blend-difference">
+      <div className="center-text pointer-events-none text-white w-full h-[40vh] flex flex-col items-center justify-center gap-2 absolute top-1/2 -translate-y-1/2 z-30 transition-colors duration-300">
+
         <h3 className="font-[Light] text-2xl font-extrabold">GET STARTED</h3>
         <h1 className="font-[Regular] text-4xl md:text-7xl">Let's make</h1>
         <h1 className="font-[Regular] text-4xl  md:text-7xl">things happen.</h1>

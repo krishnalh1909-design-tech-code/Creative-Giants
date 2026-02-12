@@ -18,7 +18,7 @@ const Home = () => {
         <BgVid />
         <Title />
         <DescPage />
-        {/* <ProjectDemo /> */}
+        <ProjectDemo />
         <GetStarted />
         <Testimonials />
         <News />
