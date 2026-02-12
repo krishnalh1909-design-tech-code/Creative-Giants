@@ -72,28 +72,28 @@ const ProjectDemo = () => {
     >
       <div
         ref={trackRef}
-        className="h-full w-full md:w-[300vw] flex items-center"
+        className="h-full w-full md:w-[300vw] flex flex-col md:flex-row items-center"
       >
         {projects.map((project) => (
           <div
             key={project.id}
-            className={`relative text-white  h-[70vh] w-screen flex justify-around items-center`}
+            className={`relative overflow-hidden text-white min-h-[130vh] md:min-h-[70vh] w-screen flex flex-col md:flex-row flex-start md:justify-around items-center `}
           >
             {/* LEFT CONTENT */}
-            <div className="mix-blend-difference flex z-50 flex-col gap-5 font-[Light] h-[80%] w-[35%] px-8">
+            <div className="mix-blend-difference flex z-50 flex-col gap-0 pt-6 md:pt-0 md:gap-5 font-[Light] h-[80%] md:h-full w-full md:w-[35%] px-5 ">
               <h1 className="text-2xl">{project.number}</h1>
-              <h1 className="text-7xl w-[60%] ">
+              <h1 className="text-2xl md:text-7xl w-full md:w-[80%] ">
                 {project.title}
               </h1>
             </div>
 
             {/* RIGHT CONTENT */}
-            <div className="z-50 h-[80%] w-[20%] font-[Light] px-5 flex gap-5 flex-col justify-end">
+            <div className="z-50 pt-4 md:pt-0 h-[80%] w-full md:h-full px-5 md:px-0 md:w-[20%] font-[Light] flex gap-5 flex-col-reverse md:flex-col justify-end ">
               <div className="flex flex-col gap-2">
                 {project.tags.map((tag, index) => (
                   <h1
                     key={index}
-                    className="border-b-3 border-white w-fit"
+                    className="border-b border-white w-fit"
                   >
                     {tag}
                   </h1>
@@ -101,15 +101,15 @@ const ProjectDemo = () => {
                 ))}
               </div>
 
-              <p className="w-[95%]">
+              <p className="w-full md:w-[95%]">
                 {project.description}
               </p>
             </div>
 
             {/* CENTER IMAGE */}
-            <div className="absolute top-1/2 left-1/2 z-40 -translate-x-1/2 -translate-y-1/2 h-[80%] w-[35%] overflow-hidden">
+            <div className="absolute top-[65%]  md:top-1/2 left-1/2 z-40 -translate-x-1/2 -translate-y-1/2 h-[60%] md:h-[80%] w-[95%] md:w-[35%] overflow-hidden">
               <img
-                className="h-full w-full object-cover"
+                className="h-full w-full md:object-cover"
                 src={project.image}
                 alt={project.title}
               />

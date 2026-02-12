@@ -24,10 +24,10 @@ const Mailing = () => {
   
     });
   return (
-    <div className='px-6 sm:px-8 py-16 min-h-screen w-full flex flex-col lg:flex-row items-start lg:items-center justify-center gap-12 bg-[#FFFEF7]'>
+    <div className='px-6 sm:px-8 py-16 min-h-screen w-full flex flex-col lg:flex-row items-start lg:items-start justify-center gap-12 bg-[#FFFEF7]'>
 
       {/* LEFT CONTENT */}
-      <div className='w-full lg:w-[40%] font-[Light] flex flex-col gap-4'>
+      <div className='w-full lg:w-[40%] font-[Light] flex flex-col gap-4 '>
 
         <div className='overflow-hidden font-[Regular]'>
           <h1 ref={headRef} className="text-sm tracking-wide">GET IN TOUCH</h1>

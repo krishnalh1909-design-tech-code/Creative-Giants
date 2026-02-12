@@ -123,9 +123,9 @@ const Testimonials = () => {
         </div>
       </div>
 
-      <div className="h-[20vh] w-full bg-red-400">
+      {/* <div className="h-[20vh] w-full bg-red-400">
 
-      </div>
+      </div> */}
 
 
     </div>

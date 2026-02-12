@@ -70,8 +70,8 @@ const GetStarted = () => {
       tl.to(
         containerRef.current,
         {
-          backgroundColor: "#ffffff",
-          duration: 0.4,
+          backgroundColor: "#FFFEF7",
+          duration: 1,
         },
         ">-0.3"
       ).to(
