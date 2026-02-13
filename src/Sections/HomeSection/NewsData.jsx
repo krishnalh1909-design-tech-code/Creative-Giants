@@ -7,9 +7,9 @@ export const NewsData = [
   },
   {
     img: "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/687a407bf6500870415015e9_Container.webp",
-    title: "Nike Motion Campaign",
+    title: "Shoulder of Giants",
     desc:
-      "A high-energy visual system focused on movement, rhythm, and modern sports culture.",
+      "Your monthly look at where we’re finding inspiration in the world",
   },
   {
     img: "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6853ebd2236c724389859c71_bffz9emy0znkf4ksb0lqon4b1q80.webp",

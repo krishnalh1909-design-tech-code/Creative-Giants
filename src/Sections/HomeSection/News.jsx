@@ -1,20 +1,16 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { NewsData } from "./NewsData";
 import { useSplitTextAnimation } from "../../Hooks/useSplitTextAnimation";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const News = () => {
   const headRef = useRef(null);
   const textRef = useRef(null);
-  
+
   const wrapperRef = useRef(null);
   const trackRef = useRef(null);
 
   /* ------------------ Heading animation ------------------ */
-
 
   useSplitTextAnimation({
     heading: {
@@ -28,30 +24,31 @@ const News = () => {
     },
   });
 
+  /* ------------------ Responsive Horizontal Swipe ------------------ */
 
-
-  /* ------------------ Trackpad horizontal swipe ------------------ */
   useEffect(() => {
     const wrapper = wrapperRef.current;
     const track = trackRef.current;
-    const cards = gsap.utils.toArray(track.children);
+    if (!wrapper || !track) return;
 
+    const cards = Array.from(track.children);
     if (!cards.length) return;
-
-    const gap = 20;
-    const cardWidth = cards[0].offsetWidth + gap;
-
-    const visibleCards = Math.floor(wrapper.offsetWidth / cardWidth);
-    const maxIndex = Math.max(cards.length - visibleCards, 0);
 
     let currentIndex = 0;
     let isAnimating = false;
+
+    const getCardWidth = () => {
+      const card = cards[0];
+      const style = window.getComputedStyle(track);
+      const gap = parseInt(style.columnGap || style.gap || 0);
+      return card.offsetWidth + gap;
+    };
 
     const goToSlide = (index) => {
       isAnimating = true;
 
       gsap.to(track, {
-        x: -index * cardWidth,
+        x: -index * getCardWidth(),
         duration: 0.8,
         ease: "power3.out",
         onComplete: () => {
@@ -60,24 +57,28 @@ const News = () => {
       });
     };
 
+    const handleResize = () => {
+      goToSlide(currentIndex); // recalibrate position on resize
+    };
+
     let scrollAccumulator = 0;
-    const SCROLL_THRESHOLD = 60; // smooth trigger point
+    const SCROLL_THRESHOLD = 60;
 
     const onWheel = (e) => {
       const horizontal = Math.abs(e.deltaX);
       const vertical = Math.abs(e.deltaY);
 
-      // Only react if horizontal intent is stronger
       if (horizontal <= vertical) return;
 
       e.preventDefault();
 
-      // accumulate scroll instead of reacting instantly
       scrollAccumulator += e.deltaX;
-
       if (Math.abs(scrollAccumulator) < SCROLL_THRESHOLD) return;
-
       if (isAnimating) return;
+
+      const cardWidth = getCardWidth();
+      const visibleCards = Math.floor(wrapper.offsetWidth / cardWidth);
+      const maxIndex = Math.max(cards.length - visibleCards, 0);
 
       if (scrollAccumulator > 0) {
         currentIndex = Math.min(currentIndex + 1, maxIndex);
@@ -86,26 +87,32 @@ const News = () => {
       }
 
       goToSlide(currentIndex);
-
-      // reset accumulator
       scrollAccumulator = 0;
     };
 
     wrapper.addEventListener("wheel", onWheel, { passive: false });
+    window.addEventListener("resize", handleResize);
 
-    return () => wrapper.removeEventListener("wheel", onWheel);
+    return () => {
+      wrapper.removeEventListener("wheel", onWheel);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
-    <div className="min-h-screen w-full flex flex-col justify-center gap-6  py-10">
+    <div className="min-h-[90vh] md:min-h-screen w-full flex flex-col justify-center gap-6 py-16 bg-[#FFFEF7]">
+      
       {/* ------------------ HEADINGS ------------------ */}
-      <div className="px-10 flex flex-col gap-3">
+      <div className="px-5 md:px-10 flex flex-col gap-3">
         <div className="overflow-hidden font-[Light]">
           <h2 ref={headRef}>NEWS & OPINION</h2>
         </div>
 
         <div className="overflow-hidden font-[Regular]">
-          <h1 ref={textRef} className="text-7xl">
+          <h1
+            ref={textRef}
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
+          >
             Stay up to date
           </h1>
         </div>
@@ -114,18 +121,24 @@ const News = () => {
       {/* ------------------ SLIDER ------------------ */}
       <div
         ref={wrapperRef}
-        className="px-10 h-[70vh] w-full overflow-hidden "
+        className="px-5 md:px-10 h-[60vh] md:h-[70vh] w-full overflow-hidden"
       >
         <div
           ref={trackRef}
-          className="gap-5 h-full flex items-center will-change-transform "
+          className="flex gap-5 h-full items-center will-change-transform"
         >
           {NewsData.map((item, i) => (
             <div
               key={i}
-              className="flex flex-col h-full  w-[30vw] shrink-0 "
+              className="
+                flex flex-col h-full shrink-0
+                w-[85%] 
+                sm:w-[60%]
+                md:w-[45%]
+                lg:w-[30%]
+              "
             >
-              <div className="group h-[40vh] w-full overflow-hidden ">
+              <div className="group h-[35vh] md:h-[40vh] w-full overflow-hidden">
                 <img
                   src={item.img}
                   alt={item.title}
@@ -133,11 +146,15 @@ const News = () => {
                 />
               </div>
 
-              <h1 className="mt-4 text-2xl font-[Light]">{item.title}</h1>
-              <div className="overflow-hidden">
-                <p className="mt-2 text-sm text-[#000000bb] font-[Light]">{item.desc}</p>
-              </div>
+              <h1 className="mt-4 text-lg md:text-2xl font-[Light]">
+                {item.title}
+              </h1>
 
+              <div className="overflow-hidden">
+                <p className="mt-2 text-xs md:text-sm text-[#000000bb] font-[Light]">
+                  {item.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>
