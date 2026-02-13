@@ -44,40 +44,47 @@ const ProjectDemo = () => {
     },
   ];
 
-  useEffect(() => {
-    const mm = gsap.matchMedia();
+ useEffect(() => {
+  const mm = gsap.matchMedia();
 
-    mm.add("(min-width: 768px)", () => {
-      gsap.to(trackRef.current, {
-        xPercent: -80,
-        ease: "none",
-        scrollTrigger: {
-          trigger: pinRef.current,
-          start: "top top",
-          end: () => `+=${window.innerWidth * 2}`,
-          scrub: 1,
-          pin: true,
-          pinSpacing: true,
-        },
-      });
+  mm.add("(min-width: 768px)", () => {
+    const track = trackRef.current;
+    const totalWidth = track.scrollWidth;
+    const viewportWidth = window.innerWidth;
+
+    const scrollDistance = totalWidth - viewportWidth;
+
+    gsap.to(track, {
+      x: -scrollDistance,
+      ease: "none",
+      scrollTrigger: {
+        trigger: pinRef.current,
+        start: "top top",
+        end: () => `+=${scrollDistance}`,
+        scrub: 1,
+        pin: true,
+        pinSpacing: true,
+        invalidateOnRefresh: true,
+      },
     });
+  });
 
-    return () => mm.revert();
-  }, []);
+  return () => mm.revert();
+}, []);
 
   return (
     <div
       ref={pinRef}
-      className="min-h-[101vh] bg-black w-screen overflow-hidden"
+      className="min-h-[121vh] md:max-h-screen bg-black w-screen overflow-hidden"
     >
       <div
         ref={trackRef}
-        className="h-full w-full md:w-[300vw] flex flex-col md:flex-row items-center"
+        className="min-h-screen md:h-screen w-full md:w-[300vw] flex flex-col md:flex-row items-center"
       >
         {projects.map((project) => (
           <div
             key={project.id}
-            className={`relative overflow-hidden text-white min-h-[130vh] md:min-h-[70vh] w-screen flex flex-col md:flex-row flex-start md:justify-around items-center `}
+            className={`relative overflow-hidden text-white min-h-[150vh] md:min-h-[70vh] w-screen flex flex-col md:flex-row flex-start md:justify-around items-center`}
           >
             {/* LEFT CONTENT */}
             <div className="mix-blend-difference flex z-50 flex-col gap-0 pt-6 md:pt-0 md:gap-5 font-[Light] h-[80%] md:h-full w-full md:w-[35%] px-5 ">
@@ -107,7 +114,7 @@ const ProjectDemo = () => {
             </div>
 
             {/* CENTER IMAGE */}
-            <div className="absolute top-[65%]  md:top-1/2 left-1/2 z-40 -translate-x-1/2 -translate-y-1/2 h-[60%] md:h-[80%] w-[95%] md:w-[35%] overflow-hidden">
+            <div className="absolute top-[65%]  md:top-1/2 left-1/2 z-40 -translate-x-1/2 -translate-y-1/2 h-[50%] md:h-[80%] w-[95%] md:w-[35%] overflow-hidden">
               <img
                 className="h-full w-full md:object-cover"
                 src={project.image}

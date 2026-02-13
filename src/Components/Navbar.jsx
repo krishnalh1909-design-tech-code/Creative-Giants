@@ -16,7 +16,7 @@ const Navbar = ({
 
   return (
     <>
-      <div className={`px-8 flex items-end fixed left-0 w-full h-screen bg-black z-40
+      <div className={`px-8 flex items-end fixed left-0 w-full h-screen bg-black z-100
         transition-all duration-700 ease-in-out
         ${open ? "top-0" : "-top-full"}`}
       >
@@ -73,7 +73,7 @@ const Navbar = ({
 
       <div
         onClick={() => setOpen(prev => !prev)}
-        className={`overflow-hidden cursor-pointer font-[Regular] w-20 h-[50px] lg:w-[100px] rounded-[30px] fixed right-3 top-5 lg:top-8 lg:right-8 z-100 ${menuBg} ${menuText}`}
+        className={`overflow-hidden cursor-pointer font-[Regular] w-20 h-[50px] lg:w-[100px] rounded-[30px] fixed right-3 top-5 lg:top-8 lg:right-8 z-150 border-2 border-[#ffffffb1] ${menuBg} ${menuText}`}
       >
         <div
           className={`absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-in-out ${open ? "-translate-y-full" : "translate-y-0"

@@ -3,7 +3,7 @@ export const NewsData = [
     img: "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882cc2aa788ed759d4e2c18_68502c02bf65bde2e99084bd_fosx9tr0ktkkftzrzl0hd45zh4h2.webp",
     title: "CALM Missed Birthdays Wins Big",
     desc:
-      "There are certain projects that offer a sense of pride, regardless of how they’re received in the industry.",
+      "There are certain projects that offer a sense of pride, regardless of how they’re received in the industry. In fact our favourite work is often defined not by the number of awards it receives, but by how emotionally invested we are in the idea.",
   },
   {
     img: "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/687a407bf6500870415015e9_Container.webp",

@@ -1,15 +1,12 @@
 import { useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {splitTextIntoLines} from "../Utils/splitTextsIntoLines"
+import { splitTextIntoLines } from "../Utils/splitTextsIntoLines";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function useSplitTextAnimation({
-  heading: {
-    ref: headingRef,
-    delay: headingDelay = 0,
-  } = {},
+  heading: { ref: headingRef, delay: headingDelay = 0 } = {},
 
   text: {
     ref: textRef,
@@ -44,14 +41,10 @@ export function useSplitTextAnimation({
 
         // ---------------- TEXT ----------------
         if (textRef?.current) {
-          animateSplitText(
-            textRef.current,
-            textPaddingBottom,
-            textDelay
-          );
+          animateSplitText(textRef.current, textPaddingBottom, textDelay);
         }
 
-        // ---------------- PARA ----------------
+        // ---------------- PARA (for single element)----------------
         if (paraRef?.current) {
           animateSplitText(
             paraRef.current,
@@ -59,6 +52,19 @@ export function useSplitTextAnimation({
             paraDelay
           );
         }
+
+        // ---------------- PARA(For Arrays) ----------------
+        // if (paraRef?.current) {
+        //   const elements = Array.isArray(paraRef.current)
+        //     ? paraRef.current
+        //     : [paraRef.current];
+
+        //   elements.forEach((el) => {
+        //     if (!el) return;
+
+        //     animateSplitText(el, paraPaddingBottom, paraDelay);
+        //   });
+        // }
 
         ScrollTrigger.refresh();
       });

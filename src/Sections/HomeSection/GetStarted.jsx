@@ -71,7 +71,7 @@ const GetStarted = () => {
         containerRef.current,
         {
           backgroundColor: "#FFFEF7",
-          duration: 1,
+          duration: 0.4,
         },
         ">-0.3"
       ).to(
