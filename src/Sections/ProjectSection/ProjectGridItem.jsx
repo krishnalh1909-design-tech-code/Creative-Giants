@@ -20,7 +20,7 @@ const ProjectGridItem = ({ item }) => {
 
   return (
     <Link
-      to={`/projects/${item.id}`}   // 🔥 dynamic navigation
+      to={`/projects/${item.id}`}  
       className="min-h-[72vh] gap-2 w-full sm:w-1/2 lg:w-[33.3%] px-8 py-2 flex flex-col"
     >
       {/* Image */}
