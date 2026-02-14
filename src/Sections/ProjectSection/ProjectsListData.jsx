@@ -1,6 +1,7 @@
 export const ProjectsListData = [
   {
-    id: "CG_070",
+    id:1,
+    idName: "CG_070",
     title: "Halo Masterpiece",
     brand: "Xbox",
     agency: "Edelman",
@@ -8,7 +9,8 @@ export const ProjectsListData = [
     bg:"#103112"
   },
   {
-    id: "CG_083",
+    id:2,
+    idName: "CG_083",
     title: "Impossible to ignore",
     brand: "CRISIS",
     agency: "Adam & Eve DDB",
@@ -16,7 +18,8 @@ export const ProjectsListData = [
     bg:"#101731"
   },
   {
-    id: "CG_063",
+    id:3,
+    idName: "CG_063",
     title: "Silent Fall",
     brand: "n/a",
     agency: "Superblue-A.A. Murakami",
@@ -24,7 +27,8 @@ export const ProjectsListData = [
     bg:"#103131"
   },
   {
-    id: "CG_073",
+    id:4,
+    idName: "CG_073",
     title: "Beyond Reality",
     brand: "Meta",
     agency: "AKQA",
@@ -32,7 +36,8 @@ export const ProjectsListData = [
     bg:"#81331F"
   },
   {
-    id: "CG_074",
+    id:5,
+    idName: "CG_074",
     title: "Urban Echo",
     brand: "Adidas",
     agency: "R/GA",
@@ -40,7 +45,8 @@ export const ProjectsListData = [
     bg:"#105F57"
   },
   {
-    id: "CG_075",
+    id:6,
+    idName: "CG_075",
     title: "Digital Dreams",
     brand: "Google",
     agency: "72andSunny",
@@ -48,7 +54,8 @@ export const ProjectsListData = [
     bg:"#311011"
   },
   {
-    id: "CG_076",
+    id:7,
+    idName: "CG_076",
     title: "Sonic Horizon",
     brand: "Spotify",
     agency: "Mother",
@@ -56,7 +63,8 @@ export const ProjectsListData = [
     bg:"#135431"
   },
   {
-    id: "CG_077",
+    id:1,
+    idName: "CG_077",
     title: "Infinite Play",
     brand: "PlayStation",
     agency: "BBH",

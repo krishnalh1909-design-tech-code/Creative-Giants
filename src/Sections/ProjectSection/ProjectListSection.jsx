@@ -34,14 +34,15 @@ const ProjectListSection = () => {
 
         <div className="px-5 sm:px-6 lg:px-8 py-2 min-h-screen">
           {ProjectsListData.map((item) => (
-            <div
+            <Link
+              to={`/projects/${item.id}`}  
               key={item.id}
               onMouseMove={() => setBgColor(item.bg)}
               onMouseLeave={() => setBgColor("#000000")}
               className="min-h-[18vh] lg:h-[25vh] w-full border-t-2 border-white flex flex-col lg:flex-row justify-center lg:items-center gap-2 lg:gap-0 py-4 lg:py-0 cursor-pointer" >
               {/* ID */}
               <h4 className="lg:w-[18%] text-sm sm:text-base opacity-70">
-                {item.id}
+                {item.idName}
               </h4>
 
               {/* Title */}
@@ -63,7 +64,7 @@ const ProjectListSection = () => {
               <h3 className="lg:w-[15%] text-sm sm:text-base lg:text-right opacity-80">
                 {item.category}
               </h3>
-            </div>
+            </Link>
           ))}
         </div>
 

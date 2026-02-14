@@ -59,4 +59,44 @@ export const ProjectDetailsData = [
      "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d27fafd8562bd4a3245e_67b49f2839eab72f735346df_5b7d03869db4b84c99296d64f95e1c2f_Silent%20Fall%20-%20The%20How.avif"
     ]
   },
+  {
+    id: 4,
+    projectNo: "PROJECT 04",
+    title: "Norfolk Way Art Tail",
+    bg: "bg-[#81331F]",
+    bgLight: "bg-[#F7E8CE]",
+    text: "text-[#F7E8CE]",
+    image:
+      "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d107d5fb1affd5d0d716_67b4a4033df8ba8ec0a69996_Norfolk%20Way%20Art%20Trail%20-%20Hero.avif",
+      imgGallery:[
+        "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d16c334f773680305db1_6850293e462e8c84dc206b3d_FLOCK%2003.webp",
+        "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d174a4d447dcf3a748ef_685028983552a194c79b6377_Maetherea-Iron-reef-Cristina-Morbi-Aurora-Destro-Public-Art-Norfolk5.jpg",
+        "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d17c39f0d489e634944b_685028f8050d13f259583f2a_FLOCK%2002.webp",
+        "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d1833149aa8419c51c74_68502867ab952527c310270f_Norfolk-Glass-2.jpg",
+        "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d18ce59f3dae020f373e_6850290598c2c8663b49d551_P1009952.webp",
+        "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d13323c5f753ed79a4a5_67b4a40419755ffbe2fb63d6_Norfolk%20Way%20Art%20Trail%20-%20The%20What.avif",
+        "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d13a7d192702921faa9f_685028392f8f211bdbf56e71_IRON%20REEF%2004.webp",
+        "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d1410c169e380d7d1c17_67b4a404b653887491407e04_Norfolk%20Way%20Art%20Trail%20-%20Why%20We%20Love%20It%202.avif"
+      ]
+  },
+  {
+    id: 5,
+    projectNo: "PROJECT 05",
+    title: "Life Uncensored",
+    bg: "bg-[#105F57]",
+    bgLight: "bg-[#C4FBED]",
+    text: "text-[#C4FBED]",
+    image:
+      "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d054c39a67bdf8693046_67b4a7077339840bee413d72_Life%20Uncensored-%20Hero.avif",
+      imgGallery:[
+        "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d09ba45da75d3cd83812_68502aa946fda3e52325d0f7_Door%20in%202.webp",
+        "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d08f634f41f771f65419_68502b55e12db5e240a4fa9d_Portal%20Wall.webp",
+        "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d0a9f1c902d4e6b4f0a4_67b4a706db56a60d09bbe65b_Life%20Uncensored%20-%20The%20How%202.avif",
+        "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d0b11c1a6d43311f326a_68502abea81ad009ca63fcf7_Throne.webp",
+        "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d0b7fcd6d44f413384eb_68502b18032d71aa28ee4f1e_LOUNGE%2004.webp",
+        "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d07efcd6d44f413378fd_67b4a70644aafa26ca4c36ca_Life%20Uncensored%20-%20The%20Why.avif",
+        "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d08799145865ad1c4809_67b4a70856b2764699ea5664_Life%20Uncensored%20-%20Why%20We%20Love%20It%202.avif",
+        "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d08f634f41f771f65419_68502b55e12db5e240a4fa9d_Portal%20Wall.webp"
+      ]
+  }
 ]
