@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { ProjectDetailsData } from "./ProjectDetailsData";
 import Footer from "../../Components/Footer";
 import Navbar from "../../Components/Navbar";
+import NextProject from "./NextProject";
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -30,7 +31,7 @@ const ProjectDetail = () => {
       <div
         className={`
           ${project.bg}
-          min-h-[25vh] md:min-h-[30vh] lg:min-h-[35vh]
+          min-h-[35vh] md:min-h-[30vh] lg:min-h-[35vh]
           flex items-end
           px-4 md:px-8
           py-6 md:py-8
@@ -140,6 +141,7 @@ const ProjectDetail = () => {
         </div>
       </div>
 
+      <NextProject />
       <Footer />
     </div>
   );

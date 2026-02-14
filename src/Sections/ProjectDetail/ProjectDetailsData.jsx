@@ -6,6 +6,7 @@ export const ProjectDetailsData = [
     bg: "bg-[#103112]",
     bgLight: "bg-[#B0FFB0]",
     text: "text-[#B0FFB0]",
+    para:"A 6X3 metre renaissance-style oil painting to support the launch of Xbox’s flagship video game, Halo Infinite.",
     image:
       "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6852da342a9de8c8fdc467d6_Halo-Hero2.webp",
     imgGallery: [
@@ -26,6 +27,7 @@ export const ProjectDetailsData = [
     bg: "bg-[#101731]",
     bgLight: "bg-[#A5C8EB]",
     text: "text-[#A5C8EB]",
+    para:"A 2.5 ton, 4.3m high, hyper-realistic sculpture of a homeless man, installed at London Kings Cross and Birmingham’s Bullring.",
     image:
       "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d43a65130d7ad1e99205_67a497aef0779d3fe8dcdf74_Impossible%20-%20Hero.webp",
     imgGallery: [
@@ -46,6 +48,7 @@ export const ProjectDetailsData = [
     bg: "bg-[#103131]",
     bgLight: "bg-[#A5E5EB]",
     text: "text-[#A5E5EB]",
+    para:"A fully immersive exhibition by Superblue London and artist Duo AA Murakami.",
     image:
       "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d243966677f5b38e7c7f_67b49f28199b2b1335cb61eb_6fd39bea5f375075f6d6f8351bda303f_Silent%20Fall%20-%20Hero.avif",
     imgGallery: [
@@ -66,6 +69,7 @@ export const ProjectDetailsData = [
     bg: "bg-[#81331F]",
     bgLight: "bg-[#F7E8CE]",
     text: "text-[#F7E8CE]",
+    para:"The Norfolk Way Art Trail 2022 was a public art initiative showcasing large-scale sculptures inspired by local stories and landscapes across Norfolk.",
     image:
       "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d107d5fb1affd5d0d716_67b4a4033df8ba8ec0a69996_Norfolk%20Way%20Art%20Trail%20-%20Hero.avif",
     imgGallery: [
@@ -86,6 +90,7 @@ export const ProjectDetailsData = [
     bg: "bg-[#105F57]",
     bgLight: "bg-[#C4FBED]",
     text: "text-[#C4FBED]",
+    para:"An immersive, interactive and X-rated celebration to launch Lionsgate's new streaming platform, Lionsgate+",
     image:
       "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882d054c39a67bdf8693046_67b4a7077339840bee413d72_Life%20Uncensored-%20Hero.avif",
     imgGallery: [
@@ -106,6 +111,7 @@ export const ProjectDetailsData = [
     bg: "bg-[#311011]",
     bgLight: "bg-[#EBA5A6]",
     text: "text-[#EBA5A6]",
+    para:"A walk-through installation of 6,929 balloons at Westfield shopping centre in London.",
     image:
       "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882cc2aa788ed759d4e2c18_68502c02bf65bde2e99084bd_fosx9tr0ktkkftzrzl0hd45zh4h2.webp",
     imgGallery: [
@@ -126,6 +132,7 @@ export const ProjectDetailsData = [
     bg: "bg-[#135431]",
     bgLight: "bg-[#BAF8D4]",
     text: "text-[#BAF8D4]",
+    para:"A 6X6 metre interactive metal cube at Alexandra Palace that gradually revealed bespoke Minecraft artwork over time.",
     image:
       "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882ca665cc5ffc239edc94d_68502447fbf484f68c9640b2_AN2I7241AlexandraPalace-Minecraft-180524-LloydWinters-scaled-p-2000.webp",
     imgGallery: [
@@ -147,6 +154,7 @@ export const ProjectDetailsData = [
     bg: "bg-[#A01414]",
     bgLight: "bg-[#FFE0E0]",
     text: "text-[#FFE0E0]",
+    para:"A seven-metre tall smiling rainbow sculpture overlooking the Glastonbury Festival site",
     image:
       "https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882c6c5c415d34f146dc110_Rainbow%20Dude%20-%20Hero-(Compressify.io).webp",
     imgGallery: [

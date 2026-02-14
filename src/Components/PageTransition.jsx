@@ -39,7 +39,9 @@ const PageTransition = ({ children, lenisRef }) => {
   useEffect(() => {
     gsap.fromTo(
       overlayRef.current,
-      { y: "0%" },
+      { y: "0%" ,
+        duration:0.5
+      },
       {
         y: "-100%",
         duration: 1.5,
