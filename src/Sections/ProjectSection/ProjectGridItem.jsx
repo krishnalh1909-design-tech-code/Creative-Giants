@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { useSplitTextAnimation } from "../../Hooks/useSplitTextAnimation";
 
@@ -18,7 +19,10 @@ const ProjectGridItem = ({ item }) => {
   });
 
   return (
-    <div className="min-h-[72vh]  gap-2   w-full sm:w-1/2 lg:w-[33.3%] px-8 py-2 flex flex-col">
+    <Link
+      to={`/projects/${item.id}`}   // 🔥 dynamic navigation
+      className="min-h-[72vh] gap-2 w-full sm:w-1/2 lg:w-[33.3%] px-8 py-2 flex flex-col"
+    >
       {/* Image */}
       <div className="overflow-hidden h-[55vh] sm:h-[60vh] lg:h-[70vh]">
         <img
@@ -30,10 +34,7 @@ const ProjectGridItem = ({ item }) => {
 
       {/* Heading */}
       <div className="overflow-hidden mt-5">
-        <h1
-          ref={headRef}
-          className="text-xl sm:text-base"
-        >
+        <h1 ref={headRef} className="text-xl sm:text-base">
           {item.projectNo}
         </h1>
       </div>
@@ -47,7 +48,7 @@ const ProjectGridItem = ({ item }) => {
           {item.title}
         </h1>
       </div>
-    </div>
+    </Link>
   );
 };
 
