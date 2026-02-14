@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { ProjectDetailsData } from "./ProjectDetailsData";
 import Footer from "../../Components/Footer";
+import Navbar from "../../Components/Navbar";
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -18,12 +19,13 @@ const ProjectDetail = () => {
   }
 
   const gallery = project.imgGallery || [];
-  const [img1, img2, img3, img4, img5,img6,img7,img8] = gallery;
+  const [img1, img2, img3, img4, img5, img6, img7, img8] = gallery;
 
 
   return (
     <div className="min-h-screen w-full">
 
+      <Navbar />
       {/* Header */}
       <div
         className={`
@@ -61,7 +63,7 @@ const ProjectDetail = () => {
       </div>
 
       {/* Gallery Section */}
-      <div className="py-16 md:py-24 w-full flex flex-col items-center gap-10 md:gap-16 px-4">
+      <div className="bg-[#FFFEF7] py-16 md:py-24 w-full flex flex-col items-center gap-10 md:gap-16 px-4">
 
         <div className="w-full sm:w-[90%] md:w-[75%] lg:w-[50%] h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
           <img

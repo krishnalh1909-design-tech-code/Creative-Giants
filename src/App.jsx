@@ -13,7 +13,7 @@ import ProjectList from "./Pages/ProjectList";
 
 import PageTransition from "./Components/PageTransition";
 import PageLayout from "./Components/PageLayout";
-import ProjectDetail from "./Sections/ProjectSection/ProjectDetail";
+import ProjectDetail from "./Sections/ProjectDetail/ProjectDetail";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,7 +23,7 @@ const App = () => {
   useEffect(() => {
     const lenis = new Lenis({
       smoothWheel: true,
-      duration: 1.2,
+      duration: 2,
     });
 
     lenisRef.current = lenis;
