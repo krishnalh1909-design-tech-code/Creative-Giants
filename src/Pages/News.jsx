@@ -1,10 +1,19 @@
 import React from 'react'
+import Navbar from '../Components/Navbar'
+import NewsHeading from '../Sections/NewsSection/NewsHeading'
+import NewsSpotlight from '../Sections/NewsSection/NewsSpotlight'
+import Mailing from "../Components/Mailing"
+import Footer from '../Components/Footer'
 
 const News = () => {
   return (
-    <div className='h-screen w-full bg-gray-200'>
-      
-    </div>
+    <>
+    <Navbar/>
+    <NewsHeading/>
+    <NewsSpotlight/>
+    <Mailing/>
+    <Footer/>
+    </>
   )
 }
 
