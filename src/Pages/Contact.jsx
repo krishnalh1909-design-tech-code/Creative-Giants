@@ -11,6 +11,7 @@ const Contact = () => {
         {/* ================= TOP SECTION ================= */}
         <div
           className="
+            md:h-[50vh] h-[60vh]
             flex flex-col md:flex-row
             justify-end md:justify-between
             gap-10 md:gap-5

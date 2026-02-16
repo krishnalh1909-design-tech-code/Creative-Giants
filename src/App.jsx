@@ -14,6 +14,7 @@ import ProjectList from "./Pages/ProjectList";
 import PageTransition from "./Components/PageTransition";
 import PageLayout from "./Components/PageLayout";
 import ProjectDetail from "./Sections/ProjectDetail/ProjectDetail";
+import NewsDetail from "./Sections/NewsSection/NewsDetail";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,7 +58,12 @@ const App = () => {
               <Route path=":id" element={<ProjectDetail />} />
             </Route>
 
-            <Route path="news" element={<News />} />
+            <Route path="news">
+              <Route index element={<News />} />
+              <Route path=":id" element={<NewsDetail />} />
+            </Route>
+
+
             <Route path="process" element={<Process />} />
             <Route path="contact" element={<Contact />} />
           </Route>

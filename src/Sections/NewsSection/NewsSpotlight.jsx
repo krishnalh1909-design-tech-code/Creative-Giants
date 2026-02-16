@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { NewsData } from "../HomeSection/NewsData";
 import NewsMainSection from "./NewsMainSection";
 
@@ -15,9 +16,10 @@ const NewsSpotlight = () => {
         </div>
 
         <div className="py-5 w-full flex flex-col lg:flex-row gap-8 lg:gap-6 lg:h-[75vh]">
-          {firstThreeNews.map((news, id) => (
-            <div
-              key={id}
+          {firstThreeNews.map((news) => (
+            <Link
+              key={news.id}
+              to={`/news/${news.id}`}
               className="w-full h-full lg:w-[32%] flex flex-col justify-between gap-4"
             >
               <div className="h-[250px] sm:h-[300px] md:h-[350px] lg:h-[50vh] w-full overflow-hidden">
@@ -28,7 +30,7 @@ const NewsSpotlight = () => {
                 />
               </div>
 
-              <div className="overflow-hidden h-max py-1 w-full">
+              <div className="overflow-hidden py-1 w-full">
                 <h1 className="text-xl">{news.title}</h1>
               </div>
 
@@ -38,23 +40,25 @@ const NewsSpotlight = () => {
                 </p>
               </div>
 
-              <div className="overflow-hidden h-[3vh] w-full cursor-pointer">
+              <div className="cursor-pointer">
                 READ ARTICLE
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
+
       <NewsMainSection />
+
       {/* Cards 4–7 Section */}
-      <div className="min-h-screen w-full bg-[#FFFEF7] ">
-        <div className=" py-10 px-4 md:px-8 h-full w-full flex flex-wrap flex-col lg:flex-row gap-8 lg:gap-6 overflow-hidden">
-          {nextFourNews.map((news, id) => (
-            <div
-              key={id}
-              className="w-full h-[70vh] font-[Light] lg:w-[32%] flex flex-col gap-4 mb-5"
+      <div className="min-h-screen w-full bg-[#FFFEF7]">
+        <div className="py-10 px-4 md:px-8 w-full flex flex-col lg:flex-row flex-wrap gap-8 lg:gap-6">
+          {nextFourNews.map((news) => (
+            <Link
+              key={news.id}
+              to={`/news/${news.id}`}
+              className="w-full lg:w-[32%] font-[Light] flex flex-col gap-4 mb-5"
             >
-              {/* Image */}
               <div className="h-[250px] sm:h-[300px] md:h-[350px] lg:h-[50vh] w-full overflow-hidden">
                 <img
                   className="w-full h-full object-cover"
@@ -63,27 +67,23 @@ const NewsSpotlight = () => {
                 />
               </div>
 
-              {/* Title */}
-              <div className="overflow-hidden h-max py-1 w-full">
-                <h1 className="text-xl sm:text-xl">
+              <div className="overflow-hidden py-1 w-full">
+                <h1 className="text-xl">
                   {news.title}
                 </h1>
               </div>
 
-              {/* Description */}
               <div className="overflow-hidden h-[20vh] w-full">
                 <p className="text-sm sm:text-base leading-relaxed">
                   {news.desc}
                 </p>
               </div>
 
-              {/* Read Article */}
-              <div className="overflow-hidden h-[3vh] w-full cursor-pointer">
+              <div className="cursor-pointer">
                 READ ARTICLE
               </div>
-            </div>
+            </Link>
           ))}
-
         </div>
       </div>
     </>
