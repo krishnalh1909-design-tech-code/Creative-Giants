@@ -1,16 +1,23 @@
-
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
+import { useRef, useLayoutEffect } from "react";
 import { useSplitTextAnimation } from "../../Hooks/useSplitTextAnimation";
-
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ProcessHeroSection = () => {
-  const paraRef = useRef()
-  const textRef = useRef()
-  const headRef = useRef()
+  const paraRef = useRef();
+  const textRef = useRef();
+  const headRef = useRef();
+
+  const imagesRef = useRef([]);
+  imagesRef.current = [];
+
+  const addToRefs = (el) => {
+    if (el && !imagesRef.current.includes(el)) {
+      imagesRef.current.push(el);
+    }
+  };
 
   useSplitTextAnimation({
     text: {
@@ -29,9 +36,35 @@ const ProcessHeroSection = () => {
     },
   });
 
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      imagesRef.current.forEach((img) => {
+        // Start from 0 height (visually)
+        // gsap.set(img, {
+        //   height: 0,
+        //   transformOrigin: "top",
+        // });
+
+        // Animate to full height
+        gsap.from(img, {
+          height:"0vh",
+          duration: 1.2,
+          // delay:3,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: img,
+            start: "top 55%",
+            toggleActions: "play none none none",
+          },
+        });
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <div className='min-h-screen w-full bg-[#FFFEF7]'>
+    <div className="min-h-screen w-full bg-[#FFFEF7]">
       <div className="px-4 sm:px-6 lg:px-8 flex flex-col justify-center lg:flex-row 
                 min-h-[80vh] w-full gap-10 lg:gap-0">
 
@@ -73,62 +106,57 @@ const ProcessHeroSection = () => {
             </p>
           </div>
         </div>
-
       </div>
 
-
+      {/* IMAGES SECTION */}
       <div className="px-4 py-5 sm:px-6 lg:px-8 flex gap-2 md:gap-5 w-full overflow-hidden">
 
         {/* LEFT GROUP */}
         <div className="w-[50%] md:w-[70%] flex gap-2 md:gap-5">
 
-          <div className="w-[50%] 
-                    h-[10vh] sm:h-[40vh] lg:h-[45vh]">
+          <div className="w-[50%] h-[10vh] sm:h-[40vh] lg:h-[45vh] overflow-hidden">
             <img
+              ref={addToRefs}
               className="w-full h-full object-cover"
               src="https://cdn.prod.website-files.com/678fc13a6195245eefbb1f34/67a2223879607efb2ed9e496_process%20image%201.webp"
               alt=""
             />
           </div>
 
-          <div className="w-[50%] 
-                    h-[15vh] sm:h-[60vh] lg:h-[70vh]">
+          <div className="w-[50%] h-[15vh] sm:h-[60vh] lg:h-[70vh] overflow-hidden">
             <img
+              ref={addToRefs}
               className="w-full h-full object-cover"
               src="https://cdn.prod.website-files.com/678fc13a6195245eefbb1f34/67a22238faf765cb07f7d53a_process%20image%202.webp"
               alt=""
             />
           </div>
-
         </div>
 
         {/* RIGHT GROUP */}
         <div className="w-[50%] md:w-[30%] flex gap-2 md:gap-5">
 
-          <div className="w-[70%] 
-                    h-[17vh] sm:h-[35vh] lg:h-[40vh]">
+          <div className="w-[70%] h-[17vh] sm:h-[35vh] lg:h-[40vh] overflow-hidden">
             <img
+              ref={addToRefs}
               className="w-full h-full object-cover"
               src="https://cdn.prod.website-files.com/678fc13a6195245eefbb1f34/67a2223895d17fa3b33d6349_process%20image%203.webp"
               alt=""
             />
           </div>
 
-          <div className="w-[30%] 
-                    h-[5vh] sm:h-[25vh] lg:h-[20vh]">
+          <div className="w-[30%] h-[5vh] sm:h-[25vh] lg:h-[20vh] overflow-hidden">
             <img
+              ref={addToRefs}
               className="w-full h-full object-cover"
               src="https://cdn.prod.website-files.com/678fc13a6195245eefbb1f34/67a22238ce043f792627cc0e_process%20image%204.webp"
               alt=""
             />
           </div>
-
         </div>
-
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default ProcessHeroSection
+export default ProcessHeroSection;
