@@ -3,6 +3,7 @@ import { NewsData } from "../HomeSection/NewsData";
 import Mailing from "../../Components/Mailing";
 import Footer from "../../Components/Footer";
 
+
 const NewsDetail = () => {
   const { id } = useParams();
 
@@ -21,7 +22,7 @@ const NewsDetail = () => {
   return (
     <>
       <div className="h-[60vh] w-full overflow-hidden">
-        <img className="h-full w-full object-cover" src="https://cdn.prod.website-files.com/6798e66ffa82a441b157a7ca/6882cc2aa788ed759d4e2c18_68502c02bf65bde2e99084bd_fosx9tr0ktkkftzrzl0hd45zh4h2.webp" alt="" />
+        <img className="h-full w-full object-cover" src={article.bgImg} alt="" />
       </div>
       {/* <div className="min-h-screen px-6 py-20 bg-[#FFFEF7]">
 
@@ -37,6 +38,7 @@ const NewsDetail = () => {
           {article.desc}
         </p>
       </div> */}
+      
       <Mailing />
       <Footer />
     </>

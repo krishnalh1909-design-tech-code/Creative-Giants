@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { NewsData } from "./NewsData";
 import { useSplitTextAnimation } from "../../Hooks/useSplitTextAnimation";
+import { Link } from "react-router-dom";
 
 const News = () => {
   const headRef = useRef(null);
@@ -128,35 +129,36 @@ const News = () => {
           className="flex gap-5 h-full items-center will-change-transform"
         >
           {NewsData.map((item, i) => (
-            <div
-              key={i}
-              className="
-                flex flex-col h-full shrink-0
-                w-[85%] 
-                sm:w-[60%]
-                md:w-[45%]
-                lg:w-[30%]
-              "
-            >
-              <div className="group h-[35vh] md:h-[40vh] w-full overflow-hidden">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-125"
-                />
-              </div>
+  <Link
+    to={`/news/${item.id}`}
+    key={i}
+    className="
+      flex flex-col h-full shrink-0
+      w-[85%] 
+      sm:w-[60%]
+      md:w-[45%]
+      lg:w-[30%]
+    "
+  >
+    <div className="group h-[35vh] md:h-[40vh] w-full overflow-hidden">
+      <img
+        src={item.img}
+        alt={item.title}
+        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-125"
+      />
+    </div>
 
-              <h1 className="mt-4 text-lg md:text-2xl font-[Light]">
-                {item.title}
-              </h1>
+    <h1 className="mt-4 text-lg md:text-2xl font-[Light]">
+      {item.title}
+    </h1>
 
-              <div className="overflow-hidden">
-                <p className="mt-2 text-xs md:text-sm text-[#000000bb] font-[Light]">
-                  {item.desc}
-                </p>
-              </div>
-            </div>
-          ))}
+    <div className="overflow-hidden">
+      <p className="mt-2 text-xs md:text-sm text-[#000000bb] font-[Light]">
+        {item.desc}
+      </p>
+    </div>
+  </Link>
+))}
         </div>
       </div>
     </div>
