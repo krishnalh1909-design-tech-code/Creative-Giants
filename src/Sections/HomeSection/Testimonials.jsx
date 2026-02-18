@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { splitTextIntoLines } from "../../Utils/splitTextsIntoLines";
 
 const Testimonials = () => {
   const testimonialsData = [
@@ -34,9 +35,49 @@ const Testimonials = () => {
 
   const wrapperRef = useRef(null);
   const trackRef = useRef(null);
+  const textRefs = useRef([]);
+
+  textRefs.current = [];
 
   const [index, setIndex] = useState(0);
   const TOTAL_SLIDES = testimonialsData.length;
+
+  /* ------------------ SPLIT TEXT ANIMATION ------------------ */
+useEffect(() => {
+  const ctx = gsap.context(() => {
+    const paddingBottom = 10; // 
+
+    textRefs.current.forEach((el) => {
+      if (!el) return;
+
+      // ✅ Apply padding to wrapper (IMPORTANT for overflow-hidden)
+      if (el.parentElement) {
+        el.parentElement.style.paddingBottom = `${paddingBottom}px`;
+      }
+
+      // Split text into lines
+      const lines = splitTextIntoLines(el);
+
+      // Make sure wrapper hides overflow properly
+      gsap.set(lines, { yPercent: 100});
+
+      gsap.to(lines, {
+        yPercent: 0,
+        
+        stagger: 0.08,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      });
+    });
+  });
+
+  return () => ctx.revert();
+}, []);
 
   const goToSlide = (i) => {
     const wrapper = wrapperRef.current;
@@ -187,8 +228,9 @@ const Testimonials = () => {
               "
               style={{ backgroundColor: item.bg }}
             >
-              <div className="lg:w-[80%] w-full flex flex-col justify-between h-full">
+              <div className="lg:w-[90%] w-full flex flex-col justify-between h-full">
                 <p
+                ref={(el) => el && textRefs.current.push(el)}
                   className="w-full font-[Light] text-lg sm:text-xl lg:text-5xl"
                   style={{ color: item.textColor }}
                 >
