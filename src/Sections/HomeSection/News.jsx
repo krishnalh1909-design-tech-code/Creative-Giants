@@ -102,7 +102,7 @@ const News = () => {
 
   return (
     <div className="min-h-[90vh] md:min-h-screen w-full flex flex-col justify-center gap-6 py-16 bg-[#FFFEF7]">
-      
+
       {/* ------------------ HEADINGS ------------------ */}
       <div className="px-5 md:px-10 flex flex-col gap-3">
         <div className="overflow-hidden font-[Light]">
@@ -129,36 +129,36 @@ const News = () => {
           className="flex gap-5 h-full items-center will-change-transform"
         >
           {NewsData.map((item, i) => (
-  <Link
-    to={`/news/${item.id}`}
-    key={i}
-    className="
+            <Link
+              to={`/news/${item.id}`}
+              key={i}
+              className="
       flex flex-col h-full shrink-0
       w-[85%] 
       sm:w-[60%]
       md:w-[45%]
       lg:w-[30%]
     "
-  >
-    <div className="group h-[35vh] md:h-[40vh] w-full overflow-hidden">
-      <img
-        src={item.img}
-        alt={item.title}
-        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-125"
-      />
-    </div>
+            >
+              <div className="group h-[35vh] md:h-[40vh] w-full overflow-hidden">
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-125"
+                />
+              </div>
 
-    <h1 className="mt-4 text-lg md:text-2xl font-[Light]">
-      {item.title}
-    </h1>
+              <h1 className="mt-4 text-lg md:text-2xl font-[Light]">
+                {item.title}
+              </h1>
 
-    <div className="overflow-hidden">
-      <p className="mt-2 text-xs md:text-sm text-[#000000bb] font-[Light]">
-        {item.desc}
-      </p>
-    </div>
-  </Link>
-))}
+              <div className="overflow-hidden">
+                <p className="mt-2 text-xs md:text-sm text-[#000000bb] font-[Light]">
+                  {item.desc}
+                </p>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </div>

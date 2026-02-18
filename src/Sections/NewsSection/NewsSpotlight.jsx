@@ -37,7 +37,7 @@ const NewsSpotlight = () => {
         titlesRef.current.forEach((title) => {
           title.innerHTML = title.textContent;
 
-          const lines = splitTextIntoLines(title, 8);
+          const lines = splitTextIntoLines(title, 3);
 
           gsap.from(lines, {
             yPercent: 100,
@@ -55,7 +55,7 @@ const NewsSpotlight = () => {
         descRef.current.forEach((desc) => {
           desc.innerHTML = desc.textContent;
 
-          const lines = splitTextIntoLines(desc, 6);
+          const lines = splitTextIntoLines(desc, 0);
 
           gsap.from(lines, {
             yPercent: 100,
