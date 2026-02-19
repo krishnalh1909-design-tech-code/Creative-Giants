@@ -22,51 +22,52 @@ const ProcessHeroSection = () => {
   useSplitTextAnimation({
     text: {
       ref: textRef,
-      delay: 2,
+      delay: 1.5,
       paddingBottom: 10,
     },
     heading: {
       ref: headRef,
-      delay: 2,
+      delay: 1.3,
     },
     para: {
       ref: paraRef,
-      delay: 2,
+      delay: 1.3,
       paddingBottom: 1,
     },
   });
 
   useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      imagesRef.current.forEach((img) => {
-        // Start from 0 height (visually)
-        // gsap.set(img, {
-        //   height: 0,
-        //   transformOrigin: "top",
-        // });
+  const ctx = gsap.context(() => {
 
-        // Animate to full height
-        gsap.from(img, {
-          height:"0vh",
-          duration: 1.2,
-          // delay:3,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: img,
-            start: "top 55%",
-            toggleActions: "play none none none",
-          },
-        });
-      });
+    // Set initial state
+    // gsap.set(imagesRef.current, {
+    //   height: 0,
+    //   transformOrigin: "top"
+    // });
+
+    // Animate all images together with stagger
+    gsap.from(imagesRef.current, {
+      height: "0vh",
+      duration: 1.5,
+      delay:1.8,
+      ease: "power1.out",
+      stagger: 0.2, 
+      scrollTrigger: {
+        trigger: imagesRef.current[0].parentElement.parentElement,
+        start: "top 85%",
+        toggleActions: "play none none none",
+      }
     });
 
-    return () => ctx.revert();
-  }, []);
+  });
+
+  return () => ctx.revert();
+}, []);
 
   return (
     <div className="min-h-screen w-full bg-[#FFFEF7]">
-      <div className="px-4 sm:px-6 lg:px-8 flex flex-col justify-center lg:flex-row 
-                min-h-[80vh] w-full gap-10 lg:gap-0">
+      <div className="min-h-[90vh] px-4 sm:px-6 lg:px-8 flex flex-col justify-center lg:flex-row 
+                lg:min-h-[65vh] w-full gap-10 lg:gap-0">
 
         {/* LEFT CONTENT */}
         <div className="w-full lg:w-[70%] font-[Light] 
@@ -114,18 +115,18 @@ const ProcessHeroSection = () => {
         {/* LEFT GROUP */}
         <div className="w-[50%] md:w-[70%] flex gap-2 md:gap-5">
 
-          <div className="w-[50%] h-[10vh] sm:h-[40vh] lg:h-[45vh] overflow-hidden">
+          <div ref={addToRefs} className="w-[50%] h-[10vh] sm:h-[40vh] lg:h-[45vh] overflow-hidden">
             <img
-              ref={addToRefs}
+
               className="w-full h-full object-cover"
               src="https://cdn.prod.website-files.com/678fc13a6195245eefbb1f34/67a2223879607efb2ed9e496_process%20image%201.webp"
               alt=""
             />
           </div>
 
-          <div className="w-[50%] h-[15vh] sm:h-[60vh] lg:h-[70vh] overflow-hidden">
+          <div ref={addToRefs} className="w-[50%] h-[15vh] sm:h-[60vh] lg:h-[70vh] overflow-hidden">
             <img
-              ref={addToRefs}
+
               className="w-full h-full object-cover"
               src="https://cdn.prod.website-files.com/678fc13a6195245eefbb1f34/67a22238faf765cb07f7d53a_process%20image%202.webp"
               alt=""
@@ -136,18 +137,18 @@ const ProcessHeroSection = () => {
         {/* RIGHT GROUP */}
         <div className="w-[50%] md:w-[30%] flex gap-2 md:gap-5">
 
-          <div className="w-[70%] h-[17vh] sm:h-[35vh] lg:h-[40vh] overflow-hidden">
+          <div ref={addToRefs} className="w-[70%] h-[17vh] sm:h-[35vh] lg:h-[40vh] overflow-hidden">
             <img
-              ref={addToRefs}
+
               className="w-full h-full object-cover"
               src="https://cdn.prod.website-files.com/678fc13a6195245eefbb1f34/67a2223895d17fa3b33d6349_process%20image%203.webp"
               alt=""
             />
           </div>
 
-          <div className="w-[30%] h-[5vh] sm:h-[25vh] lg:h-[20vh] overflow-hidden">
+          <div ref={addToRefs} className="w-[30%] h-[5vh] sm:h-[25vh] lg:h-[20vh] overflow-hidden">
             <img
-              ref={addToRefs}
+
               className="w-full h-full object-cover"
               src="https://cdn.prod.website-files.com/678fc13a6195245eefbb1f34/67a22238ce043f792627cc0e_process%20image%204.webp"
               alt=""

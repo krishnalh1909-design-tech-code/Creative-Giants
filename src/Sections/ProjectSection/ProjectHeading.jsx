@@ -7,9 +7,9 @@ const ProjectHeading = () => {
   const pRef = useRef(null);
 
   useSplitTextAnimation({
-    heading: { ref: h3Ref, delay: 1.8 },
-    text: { ref: h1Ref, delay: 1.8, paddingBottom: 0 },
-    para: { ref: pRef, delay: 1.8, paddingBottom: 2 },
+    heading: { ref: h3Ref, delay: 1.5 },
+    text: { ref: h1Ref, delay: 1.5, paddingBottom: 0 },
+    para: { ref: pRef, delay: 1.5, paddingBottom: 2 },
   });
 
   return (
