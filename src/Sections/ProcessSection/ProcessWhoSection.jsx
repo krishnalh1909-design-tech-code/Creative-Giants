@@ -1,18 +1,70 @@
-import React from 'react'
+import React, { useRef, useLayoutEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useSplitTextAnimation } from "../../Hooks/useSplitTextAnimation";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ProcessWhoSection = () => {
- 
-  return (
-    <div className='h-[60vh] lg:h-screen w-full bg-[#FFFEF7]  flex flex-col gap-4 items-center justify-center'>
 
-      <div className='overflow-hidden font-[Regular]'>
-        <h1>WHO WE ARE</h1>
+  const sectionRef = useRef(null);
+  const divsRef = useRef(null);
+  const headRef = useRef(null);
+  const linesRef = useRef([]);
+
+  linesRef.current = [];
+
+  const addToRefs = (el) => {
+    if (el && !linesRef.current.includes(el)) {
+      linesRef.current.push(el);
+    }
+  };
+
+  // ✅ 1️⃣ Split Animation Hook for Heading
+  useSplitTextAnimation({
+    heading: {
+      ref: headRef,
+      delay: 0,
+      paddingBottom: 5,
+    }
+  });
+
+  // ✅ 2️⃣ Lines Bottom → Top Animation
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+
+      gsap.from(linesRef.current, {
+        yPercent: 100,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: divsRef.current,
+          start: "top 30%",
+          toggleActions: "play none none none",
+        }
+      });
+
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <div
+      ref={sectionRef}
+      className="h-[60vh] lg:h-screen w-full bg-[#FFFEF7] flex flex-col gap-4 items-center justify-center"
+    >
+
+      {/* HEADING */}
+      <div className="overflow-hidden font-[Regular]">
+        <h1 ref={headRef}>WHO WE ARE</h1>
       </div>
 
-      <div className="h-[40vh] lg:h-[70vh] w-full flex flex-col justify-center items-center px-4 ">
-
+      <div ref={divsRef} className="h-[40vh] lg:h-[70vh] w-full flex flex-col justify-center items-center px-4 ">
         {/* LINE 1 */}
-        <div className="overflow-hidden flex flex-wrap justify-center items-center gap-2 sm:gap-3 
+        <div ref={addToRefs} className="overflow-hidden flex flex-wrap justify-center items-center gap-2 sm:gap-3 
                   font-[Light] text-lg sm:text-2xl md:text-4xl lg:text-6xl text-center">
           <h1>From Visionary</h1>
 
@@ -24,7 +76,7 @@ const ProcessWhoSection = () => {
         </div>
 
         {/* LINE 2 */}
-        <div className="overflow-hidden flex flex-wrap justify-center items-center gap-2 sm:gap-3
+        <div ref={addToRefs} className="overflow-hidden flex flex-wrap justify-center items-center gap-2 sm:gap-3
                   font-[Light] text-lg sm:text-2xl md:text-4xl lg:text-6xl text-center">
           <h1>designers</h1>
 
@@ -36,13 +88,13 @@ const ProcessWhoSection = () => {
         </div>
 
         {/* LINE 3 */}
-        <div className="overflow-hidden text-center font-[Light] 
+        <div ref={addToRefs} className="overflow-hidden text-center font-[Light] 
                   text-lg sm:text-2xl md:text-4xl lg:text-6xl pb-2">
           <h1>community changemakers, we</h1>
         </div>
 
         {/* LINE 4 */}
-        <div className="overflow-hidden flex flex-wrap justify-center items-center gap-2 sm:gap-3
+        <div ref={addToRefs} className="overflow-hidden flex flex-wrap justify-center items-center gap-2 sm:gap-3
                   font-[Light] text-lg sm:text-2xl md:text-4xl lg:text-6xl text-center">
           <h1>bring</h1>
 
@@ -54,7 +106,7 @@ const ProcessWhoSection = () => {
         </div>
 
         {/* LINE 5 */}
-        <div className="overflow-hidden flex flex-wrap justify-center items-center gap-2 sm:gap-3
+        <div ref={addToRefs} className="overflow-hidden flex flex-wrap justify-center items-center gap-2 sm:gap-3
                   font-[Light] text-lg sm:text-2xl md:text-4xl lg:text-6xl text-center">
           <h1>create new</h1>
 
@@ -69,7 +121,11 @@ const ProcessWhoSection = () => {
 
 
     </div>
-  )
-}
+  );
+};
 
-export default ProcessWhoSection
+export default ProcessWhoSection;
+
+
+
+

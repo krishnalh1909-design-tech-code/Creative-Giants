@@ -31,7 +31,7 @@ const Playbook = () => {
               ease: "power3.out",
               scrollTrigger: {
                 trigger: wrapper,
-                start: isMobile ? "top 50%" : "top 80%",
+                start: isMobile ? "top 40%" : "top 60%",
                 once: true,
               },
             }
