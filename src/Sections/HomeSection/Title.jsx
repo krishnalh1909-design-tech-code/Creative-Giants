@@ -6,27 +6,34 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Title = () => {
   const titleRef = useRef(null);
+  const svgRef = useRef(null);
   useEffect(() => {
     gsap.to(
       titleRef.current,
       {
         top: "0%",
-        duration:1,
-        delay:1
+        duration: 1,
+        delay: 1
       },
     );
 
-    gsap.to(titleRef.current, {
-      yPercent: -70, 
-      ease: "none",
-      scrollTrigger: {
-        trigger: document.body, 
-        start: "top top",
-        end: "+=100%",
-        scrub: true,
-        // markers: true,
-      },
-    });
+    gsap.from(
+      svgRef.current,
+
+      { opacity: 0, delay: 1.8, duration: 0.8, ease: "power2.out" }
+    );
+
+    // gsap.to(titleRef.current, {
+    //   yPercent: -70, 
+    //   ease: "none",
+    //   scrollTrigger: {
+    //     trigger: document.body, 
+    //     start: "top top",
+    //     end: "+=100%",
+    //     scrub: true,
+    //     // markers: true,
+    //   },
+    // });
 
 
   }, []);
@@ -34,6 +41,7 @@ const Title = () => {
     <div ref={titleRef} className='absolute -top-full left-0 h-[40vh] mix-blend-screen backdrop-blur-3xl md:h-[70vh] w-full bg-[#ffffffb9]'>
       <div className='w-full h-full px-3 md:px-8  py-5 flex items-end  bg-[#FFFFFE]'>
         <svg
+          ref={svgRef}
           xmlns="http://www.w3.org/2000/svg"
           width="100%"
           viewBox="0 0 307 68"
