@@ -19,21 +19,20 @@ const Title = () => {
 
     gsap.from(
       svgRef.current,
-
       { opacity: 0, delay: 1.8, duration: 0.8, ease: "power2.out" }
     );
 
-    // gsap.to(titleRef.current, {
-    //   yPercent: -70, 
-    //   ease: "none",
-    //   scrollTrigger: {
-    //     trigger: document.body, 
-    //     start: "top top",
-    //     end: "+=100%",
-    //     scrub: true,
-    //     // markers: true,
-    //   },
-    // });
+    gsap.to(titleRef.current, {
+      yPercent: -90, 
+      ease: "none",
+      scrollTrigger: {
+        trigger: document.body, 
+        start: "top top",
+        end: "+=100%",
+        scrub: true,
+        // markers: true,
+      },
+    });
 
 
   }, []);
