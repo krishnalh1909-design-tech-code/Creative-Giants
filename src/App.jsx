@@ -47,7 +47,7 @@ const App = () => {
       {(displayLocation) => (
         <Routes
           location={displayLocation}
-          key={displayLocation.pathname}   // 🔥 THIS FIXES YOUR ISSUE
+          key={displayLocation.pathname}  
         >
           <Route element={<PageLayout />}>
             <Route path="/" element={<Home />} />

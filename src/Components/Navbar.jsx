@@ -48,15 +48,15 @@ const Navbar = ({
               className="overflow-hidden py-2.5 cursor-pointer"
             >
               <h1
+                data-cursor="large"
                 className={`
                   ${menuItem}
                   ${open ? active : inactive}
                   ${link.delay}
                   transition-colors duration-300
-                  ${
-                    hovered && hovered !== link.name
-                      ? "text-white/30"
-                      : "text-white"
+                  ${hovered && hovered !== link.name
+                    ? "text-white/30"
+                    : "text-white"
                   }
                 `}
               >
@@ -72,21 +72,20 @@ const Navbar = ({
 
       {/* Menu Button */}
       <div
+        data-cursor="large"
         onClick={() => setOpen((prev) => !prev)}
         className={`overflow-hidden cursor-pointer font-[Regular] w-20 h-[50px] lg:w-[100px] rounded-[30px] fixed right-3 top-5 lg:top-8 lg:right-8 z-150 border-2 border-[#ffffffb1] ${menuBg} ${menuText}`}
       >
         <div
-          className={`absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-in-out ${
-            open ? "-translate-y-full" : "translate-y-0"
-          }`}
+          className={`absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-in-out ${open ? "-translate-y-full" : "translate-y-0"
+            }`}
         >
           MENU
         </div>
 
         <div
-          className={`absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-in-out ${
-            open ? "translate-y-0" : "translate-y-full"
-          }`}
+          className={`absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-in-out ${open ? "translate-y-0" : "translate-y-full"
+            }`}
         >
           CLOSE
         </div>
